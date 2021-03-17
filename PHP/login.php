@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Connexions</title>
-	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
 	<div class="container">
@@ -15,10 +15,10 @@
 					<input class="input" type="text" name="email" placeholder="Adresse email">
 					<input class="input" type="password" name="password" placeholder="Mot de passe">
 					<input class="btn "type="submit" name="login" value="Se connecter">
-					<p>Pas encore inscris ? <a href="signup.php"> Nous rejoindres</a> </p>
+					<p>Pas encore inscrit ? <a href="signup.php"> Nous rejoindre</a> </p>
 			</form>
 		</div>
 	</div>
-	<img src="../img/sunset.png">
+	<img src="../IMG/sunset.png">
 </body>
 </html>

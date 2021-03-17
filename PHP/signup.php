@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Inscriptiont</title>
-	<link rel="stylesheet" href="../css/signup.css">
+	<link rel="stylesheet" href="../CSS/signup.css">
 </head>
 <body>
 	<div class="container">
@@ -20,6 +20,6 @@
 			</form>
 		</div>
 	</div>
-	<img src="../img/sunset.png">
+	<img src="../IMG/sunset.png">
 </body>
 </html>

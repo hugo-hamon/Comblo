@@ -38,6 +38,7 @@ img{
 
 .input, .btn{
 	color: #fff;
+  font-weight: bold;
 	width: 200px;
 	margin-top: 20px;
 	background: transparent;
