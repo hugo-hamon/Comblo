@@ -15,7 +15,7 @@
 					<input class="input" type="text" name="username" placeholder="Username">
 					<input class="input" type="password" name="password" placeholder="Password">
 					<input class="btn "type="submit" name="login" value="Log In">
-					<p>Pas encore inscris ? <a href="signup.php"> Nous rejoindres</a> </p>
+					<p>Pas encore inscrit ? <a href="signup.php"> Nous rejoindre</a></p>
 			</form>
 		</div>
 	</div>

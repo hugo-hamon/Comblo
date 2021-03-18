@@ -1,0 +1,101 @@
+
+/* Image de fond */
+html {
+  background-image: url("../IMG/Background_main.jpg");
+  background-repeat: no-repeat;
+}
+/* Fin Image de fond */
+
+/* La barre de navigation */
+body {
+  margin: 0;
+}
+
+.navbar { 
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover  {
+  background-color: red;
+}
+
+.left_search {
+  position: absolute;
+  top: 13px;
+  right: 140px;
+}
+#deco  {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+/* Fin de la barre de navigation */
+
+/*Personnalisation-left */
+
+.personnalisation a:hover  {
+  background-color: red;
+}
+
+.personnalisation {
+  color: White;
+}
+
+/*Fin Personnalisation-left */
+
+/* main_top_sug */
+
+
+.container_info1, .container_info2, .container_info3 , .container_info4 {
+	height: 310px;
+	width: 270px;
+	display: flex;
+	background: rgba(0, 0, 0, 0.1);
+	color: #fff;
+	padding-top: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  flex-direction: column;
+	align-items: center;
+  border-radius: 10px;
+}
+
+.container_info1 {
+  position: absolute;
+  top: 150px;
+  left: 500px;
+  text-align:center;
+}
+
+.container_info2 {
+  position: absolute;
+  top: 150px;
+  left: 1000px;
+  text-align:center;
+}
+
+.container_info3 {
+  position: absolute;
+  top: 550px;
+  left: 500px;
+  text-align:center;
+}
+
+.container_info4{
+  position: absolute;
+  top: 550px;
+  left: 1000px;
+  text-align:center;
+}
+
+/*fin  main_top_sug */
