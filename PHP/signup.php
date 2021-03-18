@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Inscriptiont</title>
+	<title>Inscription</title>
 	<link rel="stylesheet" href="../CSS/signup.css">
 </head>
 <body>
 	<div class="container">
-		<div class="login-form">
-			<form action="login_traite.php" method="post">
+		<div class="signup-form">
+			<form action="signup_traite.php" method="post">
 				<div class="login">
 					<h3>Inscription</h3>
 				</div>

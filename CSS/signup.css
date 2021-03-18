@@ -18,7 +18,7 @@ img{
 	transform: translate(-50%, -50%);
 }
 
-.login-form form{
+.signup-form form{
 	height: 400px;
 	width: 270px;
 	border-radius: 10px;
