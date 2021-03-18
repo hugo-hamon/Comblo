@@ -4,7 +4,7 @@
   <head>
     <title>Comblo</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/main.css" />
   </head>
 
   <body id="body" >
