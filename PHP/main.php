@@ -30,19 +30,19 @@
             <div class="vect_personalisation_police ">
               <ul class="liste_police">
                 <li id="">
-                  <a href="">Arial</a>
+                  <a value="" href="">Arial</a>
                 </li>
                 <li id="">
-                  <a href="">Comic-Sans-MS</a>
+                  <a value="" href="">Comic-Sans-MS</a>
                 </li>
                 <li id="">
-                  <a href="">Times New Roman</a>
+                  <a value=""  href="">Times New Roman</a>
                 </li>
                 <li id="">
-                  <a href="">Helvetica</a>
+                  <a value="" href="">Helvetica</a>
                 </li>
                 <li id="">
-                  <a href="">Lucida Console</a>
+                  <a value="" href="">Lucida Console</a>
                 </li>
               </ul>
             </div>
