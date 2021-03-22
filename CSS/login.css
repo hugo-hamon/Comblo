@@ -66,3 +66,10 @@ a, p{
 	font-size: 0.9em;
 
 }
+
+.errors{
+	height: 2px;
+	padding-top: 2px;
+	font-size: 0.8em;
+	text-align: left;
+}

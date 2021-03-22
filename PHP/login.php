@@ -1,8 +1,12 @@
+<?php session_start(); 
+	$errors = $_SESSION['log_error'];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Connexions</title>
+	<title>Connexion</title>
 	<link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
@@ -14,6 +18,7 @@
 				</div>
 					<input class="input" type="text" name="email" placeholder="Adresse email">
 					<input class="input" type="password" name="password" placeholder="Mot de passe">
+					<?php echo "<div class='errors'>$errors</div>";?>
 					<input class="btn "type="submit" name="login" value="Se connecter">
 					<p>Pas encore inscrit ? <a href="signup.php"> Nous rejoindre</a> </p>
 			</form>

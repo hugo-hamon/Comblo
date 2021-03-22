@@ -29,7 +29,7 @@
   $result = mysqli_query($conn, $query);
 
   if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)){
-    array_push($errors, "Compte déja existant");
+    array_push($errors, "Email invalide");
   }else if($result){
     if (mysqli_num_rows($result) >= 1){
       array_push($errors, "Email déja pris");
@@ -57,14 +57,15 @@
     }
   }
 
+  //Création d'un nouvelle utilsiateur ou redirection ver signup 
   if ($errors[0] == "" and $errors[1] == "" and $errors[2] == "" and $errors[3] == ""){
     $pwd_hache = password_hash($user_pwd1, PASSWORD_DEFAULT);
     $query = "INSERT INTO utilisateur (`pseudo`, `pass`, `email`, `date_inscription`) VALUES ('$user_pseudo', '$pwd_hache', '$user_email', CURDATE())";
     mysqli_query($conn, $query);
     header('Location: main.php');
   } else {
-    $_SESSION['errors'] = $errors;
+    $_SESSION['sign_error'] = $errors;
     header('Location: signup.php');
   }
-  msqli_close($conn);
+  mysqli_close($conn);
 ?>

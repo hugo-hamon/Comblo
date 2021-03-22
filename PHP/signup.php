@@ -1,5 +1,5 @@
 <?php session_start(); 
-	$errors =  $_SESSION['errors'];
+	$errors =  $_SESSION['sign_error'];
 ?>
 
 <!DOCTYPE html>
