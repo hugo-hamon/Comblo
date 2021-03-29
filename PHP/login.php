@@ -1,5 +1,5 @@
 <?php session_start(); 
-	$errors = $_SESSION['log_error'];
+	$errors = !empty($_SESSION['log_error']) ? $_SESSION['log_error'] : "";
 ?>
 
 <!DOCTYPE html>
