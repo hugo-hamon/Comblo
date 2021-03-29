@@ -1,4 +1,43 @@
 <?php session_start();
+//Connection à la base de donnée
+  $serveur = "localhost";
+  $login = "root";
+  $mdp = "";
+  $conn	 = mysqli_connect($serveur, $login, $mdp);
+  mysqli_select_db($conn, 'comblo');
 
+  if (!$conn){
+  	die('Erreur: '.mysqli_connect_error());
+  }
 
+  //Récuperation des variables
+  $article_title = !empty($_POST['titre']) ? $_POST['titre'] : NULL;
+  $article_category = !empty($_POST['categorie']) ? $_POST['categorie'] : NULL;
+  $article_text = !empty($_POST['text']) ? $_POST['text'] : NULL;
+  $errors = ["", ""];
+  $category = ['Politique', 'Jeux vidéo', 'Nature', 'Automobile', 'Electronique'];
+
+  if ($article_category == NULL or $article_text == NULL or $article_title == NULL){
+  	$errors[0] = "Veuillez remplir tout les champs";
+  }
+
+  if (!in_array($article_category, $category)){
+  	$errors[1] = "Veuillez choisir une catégorie valide";
+  }
+
+  //Création d'un nouvelle utilsiateur ou redirection ver signup 
+  if ($errors[0] == "" and $errors[1] == ""){
+  	$article_text = mysqli_real_escape_string($conn, $article_text);
+  	$article_title = mysqli_real_escape_string($conn, $article_title);
+  	$id = $_SESSION['id'];
+  	$pseudo = $_SESSION['pseudo'];
+    $query = "INSERT INTO articles (`id`, `text`, `title`, `category`, `pseudo`) VALUES ('$id', '$article_text', '$article_title', '$article_category', '$pseudo')";
+    mysqli_query($conn, $query);
+    header('Location: main.php');
+  } else {
+    $_SESSION['article_error'] = $errors;
+    header('Location: new_article.php');
+  }
+
+  mysqli_close($conn);
 ?>

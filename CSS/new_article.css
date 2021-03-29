@@ -94,3 +94,12 @@ input, textarea{
 	height: 800px;
 	background: rgba(0, 0, 0, 0.1);
 }
+
+.errors{
+	margin-left: 4%;
+	height: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 0.8em;
+	text-align: left;
+}

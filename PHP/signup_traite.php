@@ -54,7 +54,7 @@
     $pwd_hache = password_hash($user_pwd1, PASSWORD_DEFAULT);
     $query = "INSERT INTO utilisateur (`pseudo`, `pass`, `email`, `date_inscription`) VALUES ('$user_pseudo', '$pwd_hache', '$user_email', CURDATE())";
     mysqli_query($conn, $query);
-    header('Location: main.php');
+    header('Location: login_traite.php');
   } else {
     $_SESSION['sign_error'] = $errors;
     header('Location: signup.php');

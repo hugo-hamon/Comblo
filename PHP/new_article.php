@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+	$errors =  !empty($_SESSION['article_error']) ? $_SESSION['article_error'] : ["", ""];
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +22,9 @@
 		<div class="container">
 			<input id="title" type="text" name="titre" placeholder="Titre de mon article">
 			<input list="categorie" name="categorie" placeholder="Catégories" class="categorie">
+			<?php echo "<div class='errors'>$errors[1]</div>";?>
 			<textarea id="text" name="text" placeholder="Article..."></textarea>
+			<?php echo "<div class='errors'>$errors[0]</div>";?>
 			<input class="btn" type="submit" name="sumbit" value="Créer">
 
 			<datalist id="categorie">
@@ -30,7 +34,8 @@
 			  <option value="Automobile">
 			  <option value="Electronique">
 			</datalist>
-		</div>	
+		</div>
+
 	</form>
 	<img src="../IMG/sunset.png">
 </body>

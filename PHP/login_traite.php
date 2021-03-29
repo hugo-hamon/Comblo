@@ -15,21 +15,19 @@
   $user_pwd = !empty($_POST['password']) ? $_POST['password'] : NULL;
   $errors = "";
 
-  $query = "SELECT id, pass FROM utilisateur WHERE email = '$user_email'";
+  $query = "SELECT id, pass, pseudo FROM utilisateur WHERE email = '$user_email'";
   $result = mysqli_query($conn, $query);
 
   if ($result){
   	$etu = mysqli_fetch_array($result);
   	if (!empty($etu['id'])){
   		$is_pwd_correct = password_verify($user_pwd, $etu['pass']);
-
   			if ($is_pwd_correct){
   				$_SESSION['id'] = $etu['id'];
-        		$_SESSION['pseudo'] = $etu['pseudo'];
+        	$_SESSION['pseudo'] = $etu['pseudo'];
   			} else {
   				$errors = "Erreur de saisie";
   			}
-
   	} else {
   		$errors = "Erreur de saisie";
   	}
@@ -38,7 +36,6 @@
   if ($errors == ""){
     header('Location: main.php');
   } else {
-  	
   	$_SESSION['log_error'] = $errors;
   	header('Location: login.php');
   }
