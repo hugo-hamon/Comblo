@@ -11,12 +11,12 @@
 
   <body id="body" >
     <div class="navbar">
-      <a href="#home">Comblo</a>
-      <a href="#infos">infos</a>
-      <a href="#publications">Mes publications</a>
-      <a href="#new_crea  ">Nouvelles créations</a>
-      <a href="#favoris">Favoris</a>
-      <a id="deco" href="#deco">Déconnexion</a>
+      <a href="main.php">Comblo</a>
+      <a href="infos.php">infos</a>
+      <a href="publication.php">Mes publications</a>
+      <a href="new_article.php">Nouvelles créations</a>
+      <a href="favoris.php">Favoris</a>
+      <a id="deco" href="deconnexion.php">Déconnexion</a>
     </div>
       
       <form class="left_search">
@@ -25,7 +25,6 @@
       </form> 
       
       <hr size="5" NOSHADE align="left" WIDTH="10%">
-      
         <nav class="personnalisation"/>
           <div class="container_personnalisation" />
             <h2><span>Police</span></h2>

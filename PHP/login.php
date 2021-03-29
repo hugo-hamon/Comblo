@@ -19,7 +19,7 @@
 					<input class="input" type="text" name="email" placeholder="Adresse email">
 					<input class="input" type="password" name="password" placeholder="Mot de passe">
 					<?php echo "<div class='errors'>$errors</div>";?>
-					<input class="btn "type="submit" name="login" value="Se connecter">
+					<input class="btn" type="submit" name="login" value="Se connecter">
 					<p>Pas encore inscrit ? <a href="signup.php"> Nous rejoindre</a> </p>
 			</form>
 		</div>
