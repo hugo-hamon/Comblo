@@ -18,7 +18,7 @@
   $category = ['Politique', 'Jeux vidéo', 'Nature', 'Automobile', 'Electronique'];
 
   if ($article_category == NULL or $article_text == NULL or $article_title == NULL){
-  	$errors[0] = "Veuillez remplir tout les champs";
+  	$errors[0] = "Veuillez remplir tous les champs";
   }
 
   if (!in_array($article_category, $category)){
