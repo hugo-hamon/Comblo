@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+  if (!isset($_SESSION['id'])){
+    header('Location: login.php');
+  }
+?>
 
 <!DOCTYPE>
   <html>
@@ -17,12 +21,14 @@
       <a href="new_article.php">Nouvelles créations</a>
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
-    </div>
-      
       <form class="left_search">
         <input class="rod_search" type="search" placeholder="Search" aria-label="Search">
         <button class="button_search" type="submit">Search</button>
       </form> 
+      
+    </div>
+      
+      
       
       <hr size="5" NOSHADE align="left" WIDTH="10%">
         <nav class="personnalisation"/>
@@ -80,25 +86,34 @@
           </select>
           
           <hr size="5" NOSHADE align="left" WIDTH="10%">
+          <input id="btn" type="button" value="Cliquez ici" onclick="test();">
       </nav>
-      
-      <div class="container_info1" id="div1">
+    
+    <div id="container_article">
+      <div class="article">
         <p>container_info1</p>
-		</div>
-    
-    <div class="container_info2">
+      </div>
+
+      <div class="article">
         <p>container_info2</p>
-		</div>
+      </div>
     
-    <div class="container_info3">
+      <div class="article">
         <p>container_info3</p>
-		</div>
+      </div>
     
-    <div class="container_info4">
+      <div class="article">
         <p>container_info4</p>
-		</div>
-	</div>
-  <input id="btn" type="button" value="Cliquez ici" onclick="test();"/>
+      </div>
+      
+      <div class="article">
+        <p>container_info5</p>
+      </div>
+    </div>
+    
+
+
+  >
   
   <script type="text/javascript">
     function test(){
