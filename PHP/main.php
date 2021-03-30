@@ -5,8 +5,7 @@
 ?>
 
 <!DOCTYPE>
-  <html>
-
+  <html lang="fr">
   <head>
     <title>Comblo</title>
     <meta charset="utf-8" />
@@ -17,6 +16,7 @@
     <div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">infos</a>
+      <a href="articles.php">Articles</a>
       <a href="publication.php">Mes publications</a>
       <a href="new_article.php">Nouvelles créations</a>
       <a href="favoris.php">Favoris</a>
@@ -25,10 +25,7 @@
         <input class="rod_search" type="search" placeholder="Search" aria-label="Search">
         <button class="button_search" type="submit">Search</button>
       </form> 
-      
     </div>
-      
-      
       
       <hr size="5" NOSHADE align="left" WIDTH="10%">
         <nav class="personnalisation"/>
@@ -88,32 +85,6 @@
           <hr size="5" NOSHADE align="left" WIDTH="10%">
           <input id="btn" type="button" value="Cliquez ici" onclick="test();">
       </nav>
-    
-    <div id="container_article">
-      <div class="article">
-        <p>container_info1</p>
-      </div>
-
-      <div class="article">
-        <p>container_info2</p>
-      </div>
-    
-      <div class="article">
-        <p>container_info3</p>
-      </div>
-    
-      <div class="article">
-        <p>container_info4</p>
-      </div>
-      
-      <div class="article">
-        <p>container_info5</p>
-      </div>
-    </div>
-    
-
-
-  >
   
   <script type="text/javascript">
     function test(){

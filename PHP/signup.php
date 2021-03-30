@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+<head lang="fr">
 	<meta charset="utf-8">
 	<title>Inscription</title>
 	<link rel="stylesheet" href="../CSS/signup.css">
@@ -23,7 +23,7 @@
 					<input class="input" type="password" name="password1" placeholder="Mot de passe">
 					<input class="input" type="password" name="password2" placeholder="Confirmer mot de passe">
 					<?php echo "<div class='errors'>$errors[2]</div>";?>
-					<input class="btn "type="submit" name="login" value="Créer">
+					<input class="btn" type="submit" name="login" value="Créer">
 					<?php echo "<div class='errors'>$errors[0]</div>";?>
 			</form>
 		</div>
