@@ -1,14 +1,12 @@
 <?php session_start();
+  include 'bdd.php';
   if (!isset($_SESSION['id'])){
     header('Location: login.php');
   }
-
+  
   //Connection à la base de donnée
-  $serveur = "localhost";
-  $login = "root";
-  $mdp = "";
   $conn	 = mysqli_connect($serveur, $login, $mdp);
-  mysqli_select_db($conn, 'comblo');
+  mysqli_select_db($conn, $bdd_name);
 
   if (!$conn){
   	die('Erreur: '.mysqli_connect_error());
@@ -46,10 +44,11 @@
     	<?php
     		if ($result){
   				while ($etu = mysqli_fetch_array($result)){
+            $title = htmlspecialchars($etu['title'], ENT_QUOTES);
   					echo "<div class='article'>";
   					echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
   					echo "<form action='articles_traite.php' method='post'>";
-  					echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='".$etu['title']."'>";
+  					echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
   					echo "</form>";
   					echo "<p class='text_article'>".$etu['text']."</p>";
   					echo "<p class='categorie_article'>".$etu['category']."</p>";

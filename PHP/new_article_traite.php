@@ -1,10 +1,8 @@
 <?php session_start();
-//Connection à la base de donnée
-  $serveur = "localhost";
-  $login = "root";
-  $mdp = "";
+  include 'bdd.php';
+  //Connection à la base de donnée
   $conn	 = mysqli_connect($serveur, $login, $mdp);
-  mysqli_select_db($conn, 'comblo');
+  mysqli_select_db($conn, $bdd_name);
 
   if (!$conn){
   	die('Erreur: '.mysqli_connect_error());

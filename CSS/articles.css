@@ -40,7 +40,6 @@ body {
   float: right;
 }
 
-
 #container_article{
   position: absolute;
   overflow: scroll;
@@ -75,9 +74,12 @@ body {
   letter-spacing: 1px;
   font-size: 1.1em;
   width: 100%;
+  max-width: 100%;
   outline: inherit;
   background: rgba(255, 255, 255, 0);
   border: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .text_article{
