@@ -1,6 +1,6 @@
 <?php 
-	$serveur = "localhost";
-  	$login = "root";
-  	$mdp = "";
-  	$bdd_name = 'comblo';
+  $serveur = "localhost";
+  $login = "root";
+  $mdp = "";
+  $bdd_name = 'Comblo';
 ?>

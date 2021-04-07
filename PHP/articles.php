@@ -12,7 +12,7 @@
   	die('Erreur: '.mysqli_connect_error());
   }
 
-  $query = "SELECT * FROM articles ORDER BY `id` DESC LIMIT 5";
+  $query = "SELECT * FROM articles ORDER BY `id` DESC LIMIT 25";
   $result = mysqli_query($conn, $query);
 
   mysqli_close($conn);
@@ -34,26 +34,39 @@
       <a href="new_article.php">Nouvelles créations</a>
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
-      <form class="left_search">
-        <input class="rod_search" type="search" placeholder="Search" aria-label="Search">
+      <form class="left_search" action="" method="post">
+        <input class="rod_search" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="button_search" type="submit">Search</button>
       </form> 
     </div>
 
     <div id="container_article">
     	<?php
+        $search = !empty($_POST['search']) ? $_POST['search'] : NULL;
     		if ($result){
   				while ($etu = mysqli_fetch_array($result)){
             $title = htmlspecialchars($etu['title'], ENT_QUOTES);
-  					echo "<div class='article'>";
-  					echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
-  					echo "<form action='articles_traite.php' method='post'>";
-            echo "<input type='hidden' name='id' value='".$etu['id']."'>";
-  					echo "<input class='titre_article' type='submit''value='$title'>";
-  					echo "</form>";
-  					echo "<p class='text_article'>".$etu['text']."</p>";
-  					echo "<p class='categorie_article'>".$etu['category']."</p>";
-  					echo "</div>";
+            if ($search != NULL){
+              if(strpos(strtolower($title), strtolower($search)) !== false or strpos(strtolower($etu['pseudo']), strtolower($search)) !== false or strpos(strtolower($etu['category']), strtolower($search)) !== false ){
+                  echo "<div class='article'>";
+                  echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
+                  echo "<form action='articles_traite.php' method='post'>";
+                  echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
+                  echo "</form>";
+                  echo "<p class='text_article'>".$etu['text']."</p>";
+                  echo "<p class='categorie_article'>".$etu['category']."</p>";
+                  echo "</div>";
+              }
+            } else {
+              echo "<div class='article'>";
+                  echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
+                  echo "<form action='articles_traite.php' method='post'>";
+                  echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
+                  echo "</form>";
+                  echo "<p class='text_article'>".$etu['text']."</p>";
+                  echo "<p class='categorie_article'>".$etu['category']."</p>";
+                  echo "</div>";
+            }
   				}
   			}
     	?>

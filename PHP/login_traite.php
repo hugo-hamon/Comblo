@@ -5,7 +5,7 @@
   mysqli_select_db($conn, $bdd_name);
 
   if (!$conn){
-  	die('Erreur: '.mysqli_connect_error());
+    die('Erreur: '.mysqli_connect_error());
   }
 
   //Récuperation des variables
@@ -17,25 +17,26 @@
   $result = mysqli_query($conn, $query);
 
   if ($result){
-  	$etu = mysqli_fetch_array($result);
-  	if (!empty($etu['id'])){
-  		$is_pwd_correct = password_verify($user_pwd, $etu['pass']);
-  			if ($is_pwd_correct){
-  				$_SESSION['id'] = $etu['id'];
-        	$_SESSION['pseudo'] = $etu['pseudo'];
-  			} else {
-  				$errors = "Erreur de saisie";
-  			}
-  	} else {
-  		$errors = "Erreur de saisie";
-  	}
+    $etu = mysqli_fetch_array($result);
+    if (!empty($etu['id'])){
+      $is_pwd_correct = password_verify($user_pwd, $etu['pass']);
+        if ($is_pwd_correct){
+          $_SESSION['id'] = $etu['id'];
+          $_SESSION['pseudo'] = $etu['pseudo'];
+        } else {
+          $errors = "Erreur de saisie";
+        }
+    } else {
+      $errors = "Erreur de saisie";
+    }
   }
 
   if ($errors == ""){
     header('Location: main.php');
   } else {
-  	$_SESSION['log_error'] = $errors;
-  	header('Location: login.php');
+    $_SESSION['log_error'] = $errors;
+    echo $errors;
+    header('Location: login.php');
   }
   mysqli_close($conn);
 ?>
