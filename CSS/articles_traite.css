@@ -39,3 +39,63 @@ body {
 #deco{
   float: right;
 }
+
+#container_article{
+  position: absolute;
+  transform: translate(80%, 5%);
+  height: 850px;
+  width: 40%;
+}
+
+.article{
+  overflow: scroll;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: rgba(236, 236, 236, 0.8);
+  color: #000;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.article::-webkit-scrollbar {
+  display: none;
+}
+
+.pseudo_article{
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.categorie_article{
+  color: #9E0505;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.titre_article{
+  margin-top: 80px;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+  width: 100%;
+  max-width: 100%;
+  outline: inherit;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.text_article{
+  margin-top: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+  max-width: 100%;
+  text-align: center;
+  color: rgb(90, 90, 90);
+  word-wrap: break-word;
+}

@@ -1,7 +1,23 @@
 <?php session_start();
+  include 'bdd.php';
   if (!isset($_SESSION['id'])){
     header('Location: login.php');
   }
+  
+  //Connection à la base de donnée
+  $conn  = mysqli_connect($serveur, $login, $mdp);
+  mysqli_select_db($conn, $bdd_name);
+
+  if (!$conn){
+    die('Erreur: '.mysqli_connect_error());
+  }
+
+  $article_id = !empty($_POST['id']) ? $_POST['id'] : NULL;
+
+  $query = "SELECT * FROM articles WHERE `id` = '$article_id'";
+  $result = mysqli_query($conn, $query);
+
+  mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +30,7 @@
 <body>
 	<div class="navbar">
       <a href="main.php">Comblo</a>
-      <a href="infos.php">infos</a>
+      <a href="infos.php">Infos</a>
       <a href="articles.php">Articles</a>
       <a href="publication.php">Mes publications</a>
       <a href="new_article.php">Nouvelles créations</a>
@@ -28,10 +44,19 @@
 
     <div id="container_article">
   		<div class='article'>
-  		  <p class='pseudo_article'>Pseudo</p>
-  			<p>Titre</p>
-  			<p class='text_article'>Text</p>
-  			<p class='categorie_article'>Categorie</p>
+  		  <?php
+        if ($result){
+          while ($etu = mysqli_fetch_array($result)){
+            $title = htmlspecialchars($etu['title'], ENT_QUOTES);
+            echo "<div class='article'>";
+            echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
+            echo "<p class='categorie_article'>".$etu['category']."</p>";
+            echo "<p class='titre_article'>$title</p>";
+            echo "<p class='text_article'>".$etu['text']."</p>";
+            echo "</div>";
+          }
+        }
+      ?>
   		</div>
     </div>
 

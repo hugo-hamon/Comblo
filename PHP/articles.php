@@ -48,7 +48,8 @@
   					echo "<div class='article'>";
   					echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
   					echo "<form action='articles_traite.php' method='post'>";
-  					echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
+            echo "<input type='hidden' name='id' value='".$etu['id']."'>";
+  					echo "<input class='titre_article' type='submit''value='$title'>";
   					echo "</form>";
   					echo "<p class='text_article'>".$etu['text']."</p>";
   					echo "<p class='categorie_article'>".$etu['category']."</p>";

@@ -5,6 +5,42 @@ body {
   height: 100%;
 }
 
+.navbar { 
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover  {
+  background-color: red;
+}
+
+.left_search {
+  float: right;
+  margin-top: 12px;
+}
+
+#deco{
+  float: right;
+}
+
+#container_article{
+  position: absolute;
+  overflow: scroll;
+  transform: translate(115%, 10%);
+  height: 700px;
+  width: 30%;
+}
+
 img{
 	position: absolute;
 	width: auto;
@@ -15,8 +51,8 @@ img{
 }
 
 .container{
-	height: 100%;
-	width: 100%;
+	width: 40%;
+	height: 800px;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
@@ -25,9 +61,12 @@ img{
 	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 	color: #fff;
 	padding-top: 60px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-input, textarea{
+.container input, textarea{
 	margin-left: 4%;
 	border-radius: 5px;
 	background: rgba(0, 0, 0, 0.1);
@@ -59,40 +98,6 @@ input, textarea{
 	height: 30px;
 	width: 10%;
 
-}
-
-.navbar { 
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.navbar a:hover  {
-  background-color: red;
-}
-
-#deco  {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.container{
-	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 40%;
-	height: 800px;
-	background: rgba(0, 0, 0, 0.1);
 }
 
 .errors{

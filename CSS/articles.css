@@ -41,7 +41,7 @@ body {
 }
 
 #container_article{
-  position: absolute;
+  position: abso lute;
   overflow: scroll;
   transform: translate(115%, 10%);
   height: 700px;
@@ -83,7 +83,7 @@ body {
 }
 
 .text_article{
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 20px;
   margin-right: 40px;
   max-width: 100%;
