@@ -1,13 +1,11 @@
 <?php session_start();
+  include 'bdd.php';
   if (!isset($_SESSION['id'])){
   }
-
+  
   //Connection à la base de donnée
-  $serveur = "inf-mysql.univ-rouen.fr";
-  $login = "hamonhu2";
-  $mdp = "27102002";
   $conn	 = mysqli_connect($serveur, $login, $mdp);
-  mysqli_select_db($conn, 'utilisateur');
+  mysqli_select_db($conn, $bdd_name);
 
   if (!$conn){
   	die('Erreur: '.mysqli_connect_error());
@@ -29,7 +27,7 @@
 <body>
 	<div class="navbar">
       <a href="main.php">Comblo</a>
-      <a href="infos.php">infos</a>
+      <a href="infos.php">Infos</a>
       <a href="articles.php">Articles</a>
       <a href="publication.php">Mes publications</a>
       <a href="new_article.php">Nouvelles créations</a>
@@ -45,10 +43,11 @@
     	<?php
     		if ($result){
   				while ($etu = mysqli_fetch_array($result)){
+            $title = htmlspecialchars($etu['title'], ENT_QUOTES);
   					echo "<div class='article'>";
   					echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
   					echo "<form action='articles_traite.php' method='post'>";
-  					echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='".$etu['title']."'>";
+  					echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
   					echo "</form>";
   					echo "<p class='text_article'>".$etu['text']."</p>";
   					echo "<p class='categorie_article'>".$etu['category']."</p>";

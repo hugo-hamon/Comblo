@@ -1,10 +1,8 @@
 <?php session_start();
+  include 'bdd.php';
   //Connection à la base de donnée
-  $serveur = "inf-mysql.univ-rouen.fr";
-  $login = "hamonhu2";
-  $mdp = "27102002";
   $conn	 = mysqli_connect($serveur, $login, $mdp);
-  mysqli_select_db($conn, 'utilisateur');
+  mysqli_select_db($conn, $bdd_name);
 
   if (!$conn){
   	die('Erreur: '.mysqli_connect_error());

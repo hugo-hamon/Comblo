@@ -15,7 +15,7 @@
   <body id="body" >
     <div class="navbar">
       <a href="main.php">Comblo</a>
-      <a href="infos.php">infos</a>
+      <a href="infos.php">Infos</a>
       <a href="articles.php">Articles</a>
       <a href="publication.php">Mes publications</a>
       <a href="new_article.php">Nouvelles créations</a>
