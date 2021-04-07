@@ -1,5 +1,6 @@
 <?php session_start();
 	if (!isset($_SESSION['id'])){
+    header('Location: login.php');
   	}
 	$errors =  !empty($_SESSION['article_error']) ? $_SESSION['article_error'] : ["", ""];
 ?>
@@ -15,6 +16,7 @@
 	<div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">Infos</a>
+      <a href="articles.php">Articles</a>
       <a href="publication.php">Mes publications</a>
       <a href="new_article.php">Nouvelles créations</a>
       <a href="favoris.php">Favoris</a>
