@@ -1,6 +1,5 @@
 <?php session_start();
 	if (!isset($_SESSION['id'])){
-    	header('Location: login.php');
   	}
 	$errors =  !empty($_SESSION['article_error']) ? $_SESSION['article_error'] : ["", ""];
 ?>

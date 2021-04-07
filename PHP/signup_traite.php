@@ -1,10 +1,10 @@
 <?php session_start();
   //Connection à la base de donnée
-  $serveur = "localhost";
-  $login = "root";
-  $mdp = "";
+  $serveur = "inf-mysql.univ-rouen.fr";
+  $login = "hamonhu2";
+  $mdp = "27102002";
   $conn	 = mysqli_connect($serveur, $login, $mdp);
-  mysqli_select_db($conn, 'comblo');
+  mysqli_select_db($conn, 'utilisateur');
 
   if (!$conn){
   	die('Erreur: '.mysqli_connect_error());
