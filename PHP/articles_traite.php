@@ -13,9 +13,13 @@
   }
 
   $article_id = !empty($_POST['id']) ? $_POST['id'] : NULL;
+  
 
-  $query = "SELECT * FROM articles WHERE `id` = '$article_id'";
-  $result = mysqli_query($conn, $query);
+  $article_query = "SELECT * FROM articles WHERE `id` = '$article_id'";
+  $article_result = mysqli_query($conn, $article_query);
+
+  $commentaire_query = "SELECT * FROM commentaire WHERE `id` = '$article_id'";
+  $commentaire_result = mysqli_query($conn, $commentaire_query);
 
   mysqli_close($conn);
 ?>
@@ -41,8 +45,8 @@
     <div id="container_article">
   		<div class='article'>
   		  <?php
-        if ($result){
-          while ($etu = mysqli_fetch_array($result)){
+        if ($article_result){
+          while ($etu = mysqli_fetch_array($article_result)){
             $title = htmlspecialchars($etu['title'], ENT_QUOTES);
             echo "<div class='article'>";
             echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
@@ -54,6 +58,17 @@
         }
       ?>
   		</div>
+    </div>
+
+    <div id="container_commentaire">
+      <form action='commentaire.php' method='post'>
+        <input type="text" class="add_commentaire_text" name="text" placeholder="Ajouter">
+        <input type='hidden' name='article_id' value=<?php echo "$article_id"?>>
+        <input type="submit" class="add_commentaire_submit" value="Ajouter un commentaire">
+      </form>
+    <div class="commentaire">
+        
+      </div>
     </div>
 
 </body>

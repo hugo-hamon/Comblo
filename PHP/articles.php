@@ -12,6 +12,9 @@
   	die('Erreur: '.mysqli_connect_error());
   }
 
+  $error = !empty($_SESSION['add_com_error']) ? $_SESSION['add_com_error'] : "";
+  echo $error;
+
   $query = "SELECT * FROM articles ORDER BY `id` DESC LIMIT 25";
   $result = mysqli_query($conn, $query);
 
@@ -51,7 +54,8 @@
                   echo "<div class='article'>";
                   echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
                   echo "<form action='articles_traite.php' method='post'>";
-                  echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
+                  echo "<input type='submit' class='titre_article' value='$title'>";
+                  echo "<input type='hidden' name='id' value='".$etu['id']."'>";
                   echo "</form>";
                   echo "<p class='text_article'>".$etu['text']."</p>";
                   echo "<p class='categorie_article'>".$etu['category']."</p>";
@@ -61,7 +65,8 @@
               echo "<div class='article'>";
                   echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
                   echo "<form action='articles_traite.php' method='post'>";
-                  echo "<input class='titre_article' type='submit' name='".$etu['id']."'value='$title'>";
+                  echo "<input type='submit' class='titre_article' value='$title'>";
+                  echo "<input type='hidden' name='id' value='".$etu['id']."'>";
                   echo "</form>";
                   echo "<p class='text_article'>".$etu['text']."</p>";
                   echo "<p class='categorie_article'>".$etu['category']."</p>";
