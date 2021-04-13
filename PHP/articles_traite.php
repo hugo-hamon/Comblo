@@ -18,7 +18,7 @@
   $article_query = "SELECT * FROM articles WHERE `id` = '$article_id'";
   $article_result = mysqli_query($conn, $article_query);
 
-  $commentaire_query = "SELECT * FROM commentaire WHERE `id` = '$article_id'";
+  $commentaire_query = "SELECT * FROM commentaire WHERE `article_id` = '$article_id'";
   $commentaire_result = mysqli_query($conn, $commentaire_query);
 
   mysqli_close($conn);
@@ -66,10 +66,19 @@
         <input type='hidden' name='article_id' value=<?php echo "$article_id"?>>
         <input type="submit" class="add_commentaire_submit" value="Ajouter un commentaire">
       </form>
-    <div class="commentaire">
-        
-      </div>
+    <?php
+        if ($commentaire_result){
+          while ($etu = mysqli_fetch_array($commentaire_result)){
+            echo "<div class='commentaire' style='margin-left: 0px'>";
+              echo "<p class='pseudo_date_commentaire'><span class='white_color'>".$etu['user_id']."</span> <span class='text-align-right'>".$etu['date']."</span></p>";
+              echo "<p class='commentaire_text'>".$etu['text']."</p>";
+            echo "</div>";
+          }
+        }
+      ?>
     </div>
+
+
 
 </body>
 </html>
