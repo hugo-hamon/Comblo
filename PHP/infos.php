@@ -45,6 +45,6 @@
       <hr>
     </div>
     
-    <img src="logo_comblo_1.png" alt="Logo_Comblo" width="50" height="32" />
+    <img src="../IMG/logo_comblo_1.png" alt="Logo_Comblo"  />
   </body>
 </html>
