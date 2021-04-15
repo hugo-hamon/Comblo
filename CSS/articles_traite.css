@@ -54,10 +54,6 @@ body {
   margin-bottom: 5px;
 }
 
-.article::-webkit-scrollbar {
-  display: none;
-}
-
 .pseudo_article{
   float: left;
   margin-left: 20px;
@@ -99,8 +95,20 @@ body {
   float: right;
   position: relative;
   padding: 15px 0 0;
-  margin-top: 28px;
+  margin-top: 25px;
   width: 40%;
+  height: 850px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+}
+
+.article::-webkit-scrollbar {
+  display: none;
+}
+
+#container_commentaire::-webkit-scrollbar {
+  display: none;
 }
 
 .add_commentaire_text{
@@ -128,4 +136,44 @@ body {
   font-size: 13px;
   box-shadow: 0 0 4px #fff;
   transition: box-shadow 0.5s ease;
+}
+
+.commentaire{
+  max-width: 70%;
+  word-wrap: break-word;
+  background: rgba(236, 236, 236, 0.8);
+  color: #000;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.pseudo_date_commentaire{
+  color: #9b9b9b;
+  padding: 5px 5px 0px 5px;
+}
+
+.commentaire_text{
+  padding: 0px 5px 0px 5px;
+}
+
+.white_color{
+  color: white;
+}
+
+.text-align-right{
+  float: right;
+}
+
+.rep_com{
+  font-family: Calibri, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color:#fff;
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border: 0;
+  font-weight: bold;
+  color: #CB4444 ;
+  text-transform:uppercase;
+  cursor:pointer;
 }

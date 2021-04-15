@@ -13,7 +13,6 @@
   }
 
   $error = !empty($_SESSION['add_com_error']) ? $_SESSION['add_com_error'] : "";
-  echo $error;
 
   $query = "SELECT * FROM articles ORDER BY `id` DESC LIMIT 25";
   $result = mysqli_query($conn, $query);
