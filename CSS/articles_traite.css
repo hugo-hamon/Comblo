@@ -154,7 +154,7 @@ body {
 }
 
 .commentaire_text{
-  padding: 0px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
 }
 
 .white_color{
@@ -163,4 +163,17 @@ body {
 
 .text-align-right{
   float: right;
+}
+
+.rep_com{
+  font-family: Calibri, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color:#fff;
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border: 0;
+  font-weight: bold;
+  color: #CB4444 ;
+  text-transform:uppercase;
+  cursor:pointer;
 }
