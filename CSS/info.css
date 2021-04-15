@@ -1,0 +1,107 @@
+/* La barre de navigation */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar { 
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover  {
+  background-color: red;
+}
+
+#deco  {
+  float: right;
+}
+/* Fin de la barre de navigation */
+
+/* Image background CSS */
+
+body {
+  background-image: url(../IMG/Blanc.jpg);
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+/* Fin image background CSS */
+
+/* La side barre */
+
+#sidebar {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+#list-info1, #list-info2 , #list-info3 , #list-info4 {
+  position: absolute;
+  border: 3px solid;
+  margin-right: 0%;
+  background-color: #333;
+  color: white;
+}
+
+#list-info1 {
+  top: 50px;
+  left: 95px;
+}
+#list-info2 {
+  top: 100px;
+  left: 75px;
+}
+#list-info3 {
+  top: 150px;
+  left: 50px;
+}
+#list-info4 {
+  top: 200px;
+  left: 95px;
+}
+
+
+.separation{
+	position: absolute;
+	margin-left: 250px;
+	height: 100%;
+	width : 2px;
+	background: black;
+	}
+
+a:link {
+  text-decoration: none;
+}
+
+/* Fin de la side barre */
+
+/* Block au centre  */
+#paramètres {
+  position: relative;
+  border: 3px solid;
+  height: 25%;
+  width: 50%;
+  text-align: center; 
+  padding: 30px;
+  left:500px;
+  top: 50px;
+}
+
+#sep-para {
+  
+}
+
+/* Fin block au centre  */
+
+
+
