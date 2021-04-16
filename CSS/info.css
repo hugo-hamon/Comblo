@@ -1,5 +1,10 @@
 /* La barre de navigation */
-
+html { 
+    height:100%;
+}
+body { 
+    min-height:100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -97,11 +102,25 @@ a:link {
   top: 50px;
 }
 
-#sep-para {
-  
-}
-
 /* Fin block au centre  */
 
+/* Copyright */
 
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+/* Fin copyright */
+
+#img_copy2 {
+  position: relative;
+  left: 50%;
+
+}
 

@@ -7,7 +7,6 @@
   </head>
   
   <body>
-    
     <div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">Infos</a>
@@ -42,9 +41,12 @@
         <p>fefnjdfnld</p>
         <hr>
         <p>fnkedjnsfdjks</p>
-      <hr>
-    </div>
-    
-    <img src="../IMG/logo_comblo_1.png" alt="Logo_Comblo"  />
+        <hr>
+        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo"  />
+      </div>
+      
+      <footer>
+        <img id="img_copy1" src="../IMG/logo_comblo_1.png" alt="Logo_Comblo"  />
+      </footer>
   </body>
 </html>
