@@ -52,6 +52,9 @@
               if(strpos(strtolower($title), strtolower($search)) !== false or strpos(strtolower($etu['pseudo']), strtolower($search)) !== false or strpos(strtolower($etu['category']), strtolower($search)) !== false ){
                   echo "<div class='article'>";
                   echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
+                  echo "<button type='submit' class='button_star'>";
+                  echo "<img class='star' alt='star' src='../IMG/empty_star'>";
+                  echo "</button>";
                   echo "<form action='articles_traite.php' method='post'>";
                   echo "<input type='submit' class='titre_article' value='$title'>";
                   echo "<input type='hidden' name='id' value='".$etu['id']."'>";
@@ -63,6 +66,9 @@
             } else {
               echo "<div class='article'>";
                   echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
+                  echo "<button type='submit' class='button_star'>";
+                  echo "<img class='star' alt='star' src='../IMG/empty_star'>";
+                  echo "</button>";
                   echo "<form action='articles_traite.php' method='post'>";
                   echo "<input type='submit' class='titre_article' value='$title'>";
                   echo "<input type='hidden' name='id' value='".$etu['id']."'>";
