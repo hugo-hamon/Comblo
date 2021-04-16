@@ -17,6 +17,46 @@
   $query = "SELECT * FROM articles ORDER BY `id` DESC LIMIT 25";
   $result = mysqli_query($conn, $query);
 
+  $id = $_SESSION['id'];
+
+  $fav_query = "SELECT * FROM favoris WHERE `user_id` = '$id'";
+  $fav_result = mysqli_query($conn, $fav_query);
+
+  $fav_list = [];
+  if($fav_result){
+    while($row = mysqli_fetch_array($fav_result))
+    {
+      array_push($fav_list, $row);
+    }
+  }
+
+  function print_article($pseudo, $img_src, $id, $title, $text, $category){
+    echo "<div class='article'>";
+    echo "<p class='pseudo_article'>$pseudo</p>";
+    echo "<form class='form_fav' action='favoris_traite.php' method='post'>";
+    echo "<button type='submit' class='button_star'>";
+    echo "<img class='star' alt='star' src=$img_src>";
+    echo "</button>";
+    echo "<input type='hidden' name='id' value='$id'>";
+    echo "</form>";
+    echo "<form action='articles_traite.php' method='post'>";
+    echo "<input type='submit' class='titre_article' value='$title'>";
+    echo "<input type='hidden' name='id' value='$id'>";
+    echo "</form>";
+    echo "<p class='text_article'>$text</p>";
+    echo "<p class='categorie_article'>$category</p>";
+    echo "</div>";
+  }
+
+  function is_fav($f_list, $id){
+    for ($i = 0; $i < count($f_list); $i++){
+      if ($f_list[$i]['article_id'] == $id){
+        return true;
+      }
+    }
+    return false;
+  }
+
   mysqli_close($conn);
 ?>
 
@@ -47,40 +87,25 @@
         $search = !empty($_POST['search']) ? $_POST['search'] : NULL;
     		if ($result){
   				while ($etu = mysqli_fetch_array($result)){
-            $title = htmlspecialchars($etu['title'], ENT_QUOTES);
+            $title = htmlspecialchars($etu['title'], ENT_QUOTES);       
             if ($search != NULL){
               if(strpos(strtolower($title), strtolower($search)) !== false or strpos(strtolower($etu['pseudo']), strtolower($search)) !== false or strpos(strtolower($etu['category']), strtolower($search)) !== false ){
-                  echo "<div class='article'>";
-                  echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
-                  echo "<button type='submit' class='button_star'>";
-                  echo "<img class='star' alt='star' src='../IMG/empty_star'>";
-                  echo "</button>";
-                  echo "<form action='articles_traite.php' method='post'>";
-                  echo "<input type='submit' class='titre_article' value='$title'>";
-                  echo "<input type='hidden' name='id' value='".$etu['id']."'>";
-                  echo "</form>";
-                  echo "<p class='text_article'>".$etu['text']."</p>";
-                  echo "<p class='categorie_article'>".$etu['category']."</p>";
-                  echo "</div>";
+                if(is_fav($fav_list, $etu['id'])){
+                  print_article($etu['pseudo'], '../IMG/full_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+                } else {
+                  print_article($etu['pseudo'], '../IMG/empty_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+                }  
               }
             } else {
-              echo "<div class='article'>";
-                  echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
-                  echo "<button type='submit' class='button_star'>";
-                  echo "<img class='star' alt='star' src='../IMG/empty_star'>";
-                  echo "</button>";
-                  echo "<form action='articles_traite.php' method='post'>";
-                  echo "<input type='submit' class='titre_article' value='$title'>";
-                  echo "<input type='hidden' name='id' value='".$etu['id']."'>";
-                  echo "</form>";
-                  echo "<p class='text_article'>".$etu['text']."</p>";
-                  echo "<p class='categorie_article'>".$etu['category']."</p>";
-                  echo "</div>";
+              if(is_fav($fav_list, $etu['id'])){
+                print_article($etu['pseudo'], '../IMG/full_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+              } else {
+                print_article($etu['pseudo'], '../IMG/empty_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+              } 
             }
   				}
   			}
     	?>
     </div>
-
 </body>
 </html>

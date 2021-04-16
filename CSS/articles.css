@@ -120,3 +120,7 @@ body {
 .star{
   width: 100%;
 }
+
+.form_fav{
+  display: inline;
+}
