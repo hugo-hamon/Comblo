@@ -29,6 +29,6 @@
     }
   }
 
-  header('Location: articles.php');
+  header('Location: favoris.php');
   mysqli_close($conn);
 ?>
