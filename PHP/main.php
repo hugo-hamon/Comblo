@@ -97,6 +97,10 @@
       document.getElementById("div1").style.fontSize = x;
     }
   </script>
+  
+  <div class="footer_bottom" >
+    <p>copyright &copy; 2021, designed by <span>Arka and Blupo</span></p>
+  </div> 
   </body>
 
 </html>

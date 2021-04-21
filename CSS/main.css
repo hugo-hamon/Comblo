@@ -49,3 +49,40 @@ body {
 
 /*Fin Personnalisation-left */
   
+/* Copyright */
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+#img_copy2 {
+  position: absolute;
+  left: 80%;
+  top: 700px;
+
+}
+
+.footer_bottom {
+  background: black;
+  width: 100vw;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 100%;
+  
+}
+
+.footer_bottom p  {
+  font-size: 14px;
+  word-spacing: 5px;
+  text-transform: capitalize;
+}
+
+/* Fin copyright */
