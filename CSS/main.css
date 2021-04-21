@@ -35,16 +35,3 @@ body {
   float: right;
 }
 /* Fin de la barre de navigation */
-
-/*Personnalisation-left */
-
-.personnalisation a:hover  {
-  background-color: red;
-}
-
-.personnalisation {
-  width: 20%;
-  color: White;
-}
-
-/*Fin Personnalisation-left */
