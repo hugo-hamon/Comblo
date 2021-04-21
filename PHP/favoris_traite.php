@@ -19,16 +19,23 @@
   $fav_query = "SELECT * FROM favoris WHERE `article_id` = '$article_id'";
   $fav_result = mysqli_query($conn, $fav_query);
 
+  
+
   if($fav_result){
     if (mysqli_num_rows($fav_result) >= 1){
       $fav_query = "DELETE FROM favoris WHERE article_id = $article_id";
       $fav_result = mysqli_query($conn, $fav_query);
+      $fav_article_query = "UPDATE articles SET favoris = favoris - 1 WHERE `id` = '$article_id'";
+      $fav_article_result = mysqli_query($conn, $fav_article_query);
+
     } else {
       $fav_query = "INSERT INTO favoris (`user_id`, `article_id`) VALUES ('$id', '$article_id')";
       $fav_result = mysqli_query($conn, $fav_query);
+      $fav_article_query = "UPDATE articles SET favoris = favoris + 1 WHERE `id` = '$article_id'";
+      $fav_article_result = mysqli_query($conn, $fav_article_query);
     }
   }
 
-  header('Location: articles.php');
+  header('Location: favoris.php');
   mysqli_close($conn);
 ?>
