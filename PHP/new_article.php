@@ -21,10 +21,6 @@
       <a href="new_article.php">Nouvelles créations</a>
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
-      <form class="left_search">
-        <input class="rod_search" type="search" placeholder="Search" aria-label="Search">
-        <button class="button_search" type="submit">Search</button>
-      </form> 
     </div>
     
 	<form action="new_article_traite.php" method="post">

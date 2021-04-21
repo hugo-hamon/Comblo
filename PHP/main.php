@@ -1,7 +1,21 @@
 <?php session_start();
+  include 'bdd.php';
   if (!isset($_SESSION['id'])){
     header('Location: login.php');
   }
+  
+  //Connection à la base de donnée
+  $conn  = mysqli_connect($serveur, $login, $mdp);
+  mysqli_select_db($conn, $bdd_name);
+
+  if (!$conn){
+    die('Erreur: '.mysqli_connect_error());
+  }
+
+  $article_query = "SELECT * FROM articles ORDER BY `favoris` DESC LIMIT 3";
+  $article_result = mysqli_query($conn, $article_query);
+
+  mysqli_close($conn);
 ?>
 
 <!DOCTYPE>
@@ -22,81 +36,6 @@
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
     </div>
-      
-      <hr size="5" NOSHADE align="left" WIDTH="10%">
-        <nav class="personnalisation"/>
-          <div class="container_personnalisation" />
-            <h2><span>Police</span></h2>
-            <div class="vect_personalisation_police ">
-              <ul class="liste_police">
-                <li id="">
-                  <a value="" href="">Arial</a>
-                </li>
-                <li id="">
-                  <a value="" href="">Comic-Sans-MS</a>
-                </li>
-                <li id="">
-                  <a value=""  href="">Times New Roman</a>
-                </li>
-                <li id="">
-                  <a value="" href="">Helvetica</a>
-                </li>
-                <li id="">
-                  <a value="" href="">Lucida Console</a>
-                </li>
-              </ul>
-            </div>
-          
-          <p>Taille de la police</p>
-          <select id="Taille_police" name="taille_police" onchange="changeFont()">
-            <option value="25px">25%</option>
-            <option value="50px">50%</option>
-            <option value="75px">75%</option>
-            <option value="100px">100%</option>
-          </select>
-          
-          <hr size="5" NOSHADE align="left" WIDTH="10%">
-          
-          <p>Fond de Couleur : </p>
-          <select id="color_background" name="Couleur De fond" onchange="changeColor()">
-            <option value="Rouge">Rouge</option>
-            <option value="#ff8000">Orange</option>
-            <option value="Jaune">Jaune</option>
-            <option value="vert">vert</option>
-            <option value="blue">Bleu</option>
-            <option value="Indigo">Indigo</option>
-            <option value="Violet">Violet</option>
-          </select>
-          
-          <hr size="5" NOSHADE align="left" WIDTH="10%">
-          
-          <p>Zoom de page</p>
-          <select id="zoom_page" name="zoom_page">
-            <option value="25">25%</option>
-            <option value="50">50%</option>
-            <option value="75">75%</option>
-            <option value="100">100%</option>
-          </select>
-          
-          <hr size="5" NOSHADE align="left" WIDTH="10%">
-          <input id="btn" type="button" value="Cliquez ici" onclick="test();">
-      </nav>
-  
-  <script type="text/javascript">
-    function test(){
-      alert("coucou c'est moi")
-    }
-    
-    function changeColor() {
-      var x = document.getElementById("color_background").value;
-      document.getElementById("div1").style.background = x;
-    }
-    
-    function changeFont() {
-      var x = document.getElementById("Taille_police").value;
-      document.getElementById("div1").style.fontSize = x;
-    }
-  </script>
   
   <div class="footer_bottom" >
     <p>copyright &copy; 2021, designed by <span>Arka and Blupo</span></p>

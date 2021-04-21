@@ -14,7 +14,7 @@
 
   $id = $_SESSION['id'];
 
-  $query = "SELECT * FROM articles WHERE `user_id` = $id";
+  $query = "SELECT * FROM articles WHERE `user_id` = $id ORDER BY id DESC";
   $result = mysqli_query($conn, $query);
 
   mysqli_close($conn);
@@ -57,7 +57,7 @@
                   echo "<input type='hidden' name='id' value='".$etu['id']."'>";
                   echo "</form>";
                   echo "<p class='text_article'>".$etu['text']."</p>";
-                  echo "<p class='categorie_article'>".$etu['category']."</p>";
+                  echo "<p class='categorie_article'>".$etu['category']." <span class='date_article'>".$etu['date_article']."</span> </p>";
                   echo "</div>";
               }
             } else {
@@ -68,7 +68,7 @@
                   echo "<input type='hidden' name='id'value='".$etu['id']."'>";
                   echo "</form>";
                   echo "<p class='text_article'>".$etu['text']."</p>";
-                  echo "<p class='categorie_article'>".$etu['category']."</p>";
+                  echo "<p class='categorie_article'>".$etu['category']." <span class='date_article'>".$etu['date_article']."</span> </p>";
                   echo "</div>";
             }
   				}
