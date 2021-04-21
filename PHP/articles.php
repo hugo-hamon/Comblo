@@ -29,8 +29,7 @@
       array_push($fav_list, $row);
     }
   }
-
-  function print_article($pseudo, $img_src, $id, $title, $text, $category){
+  function print_article($pseudo, $img_src, $id, $title, $text, $category, $date){
     echo "<div class='article'>";
     echo "<p class='pseudo_article'>$pseudo</p>";
     echo "<form class='form_fav' action='favoris_traite.php' method='post'>";
@@ -44,7 +43,7 @@
     echo "<input type='hidden' name='id' value='$id'>";
     echo "</form>";
     echo "<p class='text_article'>$text</p>";
-    echo "<p class='categorie_article'>$category</p>";
+    echo "<p class='categorie_article'>$category <span class='date_article'>$date</span> </p>";
     echo "</div>";
   }
 
@@ -91,16 +90,16 @@
             if ($search != NULL){
               if(strpos(strtolower($title), strtolower($search)) !== false or strpos(strtolower($etu['pseudo']), strtolower($search)) !== false or strpos(strtolower($etu['category']), strtolower($search)) !== false ){
                 if(is_fav($fav_list, $etu['id'])){
-                  print_article($etu['pseudo'], '../IMG/full_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+                  print_article($etu['pseudo'], '../IMG/full_star.jpg', $etu['id'], $title, $etu['text'], $etu['category'], $etu['date_article']);
                 } else {
-                  print_article($etu['pseudo'], '../IMG/empty_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+                  print_article($etu['pseudo'], '../IMG/empty_star.jpg', $etu['id'], $title, $etu['text'], $etu['category'], $etu['date_article']);
                 }  
               }
             } else {
               if(is_fav($fav_list, $etu['id'])){
-                print_article($etu['pseudo'], '../IMG/full_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+                print_article($etu['pseudo'], '../IMG/full_star.jpg', $etu['id'], $title, $etu['text'], $etu['category'], $etu['date_article']);
               } else {
-                print_article($etu['pseudo'], '../IMG/empty_star.jpg', $etu['id'], $title, $etu['text'], $etu['category']);
+                print_article($etu['pseudo'], '../IMG/empty_star.jpg', $etu['id'], $title, $etu['text'], $etu['category'], $etu['date_article']);
               } 
             }
   				}

@@ -29,7 +29,7 @@
   	$article_title = mysqli_real_escape_string($conn, $article_title);
   	$id = $_SESSION['id'];
   	$pseudo = $_SESSION['pseudo'];
-    $query = "INSERT INTO `articles` (`user_id`, `text`, `title`, `category`, `pseudo`, `id`) VALUES ('$id', '$article_text', '$article_title', '$article_category', '$pseudo', NULL)";
+    $query = "INSERT INTO `articles` (`user_id`, `text`, `title`, `category`, `pseudo`, `date_article`, `id`) VALUES ('$id', '$article_text', '$article_title', '$article_category', '$pseudo', CURDATE(), NULL)";
     mysqli_query($conn, $query);
     header('Location: main.php');
   } else {
