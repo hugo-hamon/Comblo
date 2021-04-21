@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../CSS/info.css" />
-    <title>Informations</title>
+    <title>Confidentialité</title>
   </head>
   
   <body>
@@ -32,22 +32,20 @@
       <p></p>
       <h1>Bonjour ! <!-- nom de la personne --> </h1> 
         <hr>
-        <h3>Nous vous remercions sincérement d'être inscrit sur notre Blog ! 
-        Comblo a pour but d'être utile a tous sur des sujets interressant et passionnant.
-        Tout vos  avis compte et chaque commentaire quelqu'il soit doivent être respecter.
-        Nous vous prions donc d'être agréable avec les autres utilisateurs.
-        Bonnes conversations sur Comblo &copy;
+        <h3>Comme tout Blog, il peut y avoir des comportements déplacés et des injures.
+        Nous nous désolarisons complétement et ne de tout comportements aberrant et propos tenu.
+        Veuillez signaler tout comportement déplacés ici :
          </h3>
         <hr>
-        <p><a href="infos.php">Informations</a></p>
+        <p>Avez-vous des remarques, sugestions afin d'amélioré notre site ? </p>
         <hr>
-        <p><a href="compte.php">Compte</a></p>
+        <p></p>
         <hr>
-        <p><a  href="confidentialite.php">Confidentialité</a></p>
+        <p></p>
         <hr>
-        <p><a  href="para_avance.php">Paramètres avancés</a></p>
+        <p></p>
         <hr>
-        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150">
+        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="100"/>
       </div>
       
       <div class="footer_bottom" >

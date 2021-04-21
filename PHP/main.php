@@ -14,7 +14,7 @@
 
   <body id="body" >
     <div class="navbar">
-      <a href="main.php">Comblo</a>
+      <a href="main.php"> <img id="img_copy1" src="../IMG/logo_comblo_2_new.png" alt="Logo_Comblo" width="20" /></a>
       <a href="infos.php">Infos</a>
       <a href="articles.php">Articles</a>
       <a href="publication.php">Mes publications</a>
