@@ -109,11 +109,10 @@
     </div>
 
     <div class="left_side_bar">
-      <h2>Information</h2>
+      <h2>Informations</h2>
       <p><span class="red"><?php echo $informations[0];?></span> utilisateurs</p>
       <p><span class="red"><?php echo $informations[1];?></span> articles</p>
       <p><span class="red"><?php echo $informations[2];?></span> commentaires</p>
-      <p><span class="red"><?php echo $informations[3];?></span> likes</p>
       <p><span class="red"><?php echo $informations[4];?></span> favoris</p>
     </div>
   

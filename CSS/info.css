@@ -35,6 +35,7 @@ body {
   background-image: url(../IMG/Blanc.jpg);
   background-attachment: fixed;
   background-repeat: repeat;
+  background-size: cover;
 }
 /* Fin image background CSS */
 

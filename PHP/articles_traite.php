@@ -20,6 +20,7 @@
   $user_connection_id = $_SESSION['id'];
   $_SESSION['article_id'] = $article_id;
   $_SESSION['article_user_id'] = $article_user_id;
+  
 
   $article_result = mysqli_query($conn, "SELECT * FROM articles WHERE `id` = '$article_id'");
   $commentaire_result = mysqli_query($conn, "SELECT * FROM commentaire WHERE `article_id` = '$article_id' ORDER BY likes DESC");

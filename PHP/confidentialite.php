@@ -30,12 +30,11 @@
     <div id="paramètres">
       <p></p>
         <hr>
-        <h3>Comme tout Blog, il peut y avoir des comportements déplacés et des injures.
-        Nous nous désolarisons complétement  de tout comportements aberrant et propos tenu.
-        Veuillez signaler tout comportement déplacés  : <input class="favorite styled" value="ici" type="button">
+        <h3>Comme dans tout Blog, il peut y avoir des comportements déplacés et des injures.
+	    Nous nous désolidarisons totalement de tout propos tenu. Veuillez nous signaler toute conduite abusive : <input class="favorite styled" value="ici" type="button">
          </h3>
         <hr>
-        <p>Avez-vous des remarques, sugestions afin d'amélioré notre site ? </p>
+        <p>Avez-vous des remarques, suggestions afin d'améliorer notre site ? </p>
         <textarea name="rem" cols="40" rows="8  "></textarea> 
         <input class="favorite styled" value="Valider" type="button">
         <hr>

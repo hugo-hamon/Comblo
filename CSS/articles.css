@@ -3,6 +3,7 @@ html {
   background-image: url("../IMG/Background_main.jpg");
   background-repeat: no-repeat;
   font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
 }
 /* Fin Image de fond */
 

@@ -35,7 +35,6 @@
     header('Location: main.php');
   } else {
     $_SESSION['log_error'] = $errors;
-    echo $errors;
     header('Location: login.php');
   }
   mysqli_close($conn);

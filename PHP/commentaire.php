@@ -16,7 +16,7 @@
   $likes = 0;
   $parent_id = 0;
   $pseudo = $_SESSION['pseudo'];
-  $is_com;
+  $is_com = FALSE;
 
   if ($commentaire_text == NULL or $article_id == NULL){
   	$error = "Champ vide";
