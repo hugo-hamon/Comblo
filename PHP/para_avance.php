@@ -30,7 +30,6 @@
     
     <div id="paramètres">
       <p></p>
-      <h1>Bonjour ! <!-- nom de la personne --> </h1> 
         <hr>
         <h3>
          </h3>
@@ -43,7 +42,7 @@
         <hr>
         <p></p>
         <hr>
-        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="100"/>
+        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150"/>
       </div>
       
       <div class="footer_bottom" >

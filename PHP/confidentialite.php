@@ -23,29 +23,23 @@
     
     <div id="sidebar">
       <a id="list-info1" href="infos.php">Informations</a>
-      <a id="list-info2" href="compte.php">Compte</a>
+      <a id="list-info2" href="compte.php">Compte/paramètres</a>
       <a id="list-info3" href="confidentialite.php">Confidentialité</a>
-      <a id="list-info4" href="para_avance.php">Paramètres avancés</a>
     </div>
     
     <div id="paramètres">
       <p></p>
-      <h1>Bonjour ! <!-- nom de la personne --> </h1> 
         <hr>
         <h3>Comme tout Blog, il peut y avoir des comportements déplacés et des injures.
-        Nous nous désolarisons complétement et ne de tout comportements aberrant et propos tenu.
-        Veuillez signaler tout comportement déplacés ici :
+        Nous nous désolarisons complétement  de tout comportements aberrant et propos tenu.
+        Veuillez signaler tout comportement déplacés  : <input class="favorite styled" value="ici" type="button">
          </h3>
         <hr>
         <p>Avez-vous des remarques, sugestions afin d'amélioré notre site ? </p>
+        <textarea name="rem" cols="40" rows="8  "></textarea> 
+        <input class="favorite styled" value="Valider" type="button">
         <hr>
-        <p></p>
-        <hr>
-        <p></p>
-        <hr>
-        <p></p>
-        <hr>
-        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="100"/>
+        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150"/>
       </div>
       
       <div class="footer_bottom" >

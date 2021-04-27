@@ -18,19 +18,18 @@
     </div>
     
     <div>
-      <hr class="separation" />
+      <hr class="separation"/>
     </div>
     
     <div id="sidebar">
       <a id="list-info1" href="infos.php">Informations</a>
-      <a id="list-info2" href="compte.php">Compte</a>
+      <a id="list-info2" href="compte.php">Compte/paramètres</a>
       <a id="list-info3" href="confidentialite.php">Confidentialité</a>
-      <a id="list-info4" href="para_avance.php">Paramètres avancés</a>
     </div>
     
     <div id="paramètres">
       <p></p>
-      <h1>Bonjour ! <!-- nom de la personne --> </h1> 
+      <h1>Bonjour <?php  ?> ! <!-- nom de la personne --> </h1> 
         <hr>
         <h3>Nous vous remercions sincérement d'être inscrit sur notre Blog ! 
         Comblo a pour but d'être utile a tous sur des sujets interressant et passionnant.
@@ -41,11 +40,9 @@
         <hr>
         <p><a href="infos.php">Informations</a></p>
         <hr>
-        <p><a href="compte.php">Compte</a></p>
+        <p><a href="compte.php">Compte/paramètres</a></p>
         <hr>
         <p><a  href="confidentialite.php">Confidentialité</a></p>
-        <hr>
-        <p><a  href="para_avance.php">Paramètres avancés</a></p>
         <hr>
         <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150">
       </div>

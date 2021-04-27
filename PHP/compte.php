@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../CSS/info.css" />
-    <title>compte</title>
+    <title>compte/paramètres</title>
   </head>
   
   <body>
@@ -23,24 +23,24 @@
     
     <div id="sidebar">
       <a id="list-info1" href="infos.php">Informations</a>
-      <a id="list-info2" href="compte.php">Compte</a>
+      <a id="list-info2" href="compte.php">Compte/paramètres</a>
       <a id="list-info3" href="confidentialite.php">Confidentialité</a>
-      <a id="list-info4" href="para_avance.php">Paramètres avancés</a>
     </div>
     
     <div id="paramètres">
       <p></p>
-      <h1>Bonjour ! <!-- nom de la personne --> </h1> 
-        <p>Vous vous êtes inscrit sur cette addresse : </p>
-        <p>Si vous voulez changer d'addresse, cliquez ici : </p>
+        <p>Vous vous êtes inscrit sur cette addresse </p>
+        <p>Si vous souhaiter changer d'addresse, cliquez :  <input class="favorite styled" value="ici" type="button"> </p>
         <hr>
-        <p>Si vous voulez changer de mot de passe, cliquez ici : </p>
+        <p>Si vous souhaiter changer de mot de passe, cliquez :  <input class="favorite styled" value="ici" type="button"></p>
         <hr>
-        <p>Si vous voulez ajouter une photo de profil, cliquez ici :</p>
+        <p>Si vous souhaiter ajouter une photo de profil, cliquez : <form method="post" action="change.php">
+                                                                    <input class="favorite styled" value="ici" type="button"> 
+                                                                    </form>
+        
+        </p>
         <hr>
-        <p></p>
-        <hr>
-        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="100"/>
+        <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150"/>
       </div>
       
       <div class="footer_bottom" >
