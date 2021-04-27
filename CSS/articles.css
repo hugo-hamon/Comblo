@@ -42,7 +42,7 @@ body {
 
 #container_article{
   font-weight: bold;
-  position: abso lute;
+  position: absolute;
   overflow: scroll;
   transform: translate(115%, 10%);
   height: 700px;
@@ -107,7 +107,6 @@ body {
   bottom: 0;
   width: 100%;
 }
-
 .button_star{
   padding: 10px 10px 0px 0px;
   float: right;

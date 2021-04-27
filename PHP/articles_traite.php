@@ -12,19 +12,21 @@
     die('Erreur: '.mysqli_connect_error());
   }
 
-  $article_id = !empty($_POST['id']) ? $_POST['id'] : $_SESSION['article_id'];
-  $_SESSION['article_id'] = $article_id;
+  $error = !empty($_SESSION['add_com_error']) ? $_SESSION['add_com_error'] : "Ajouter";
+  $_SESSION['add_com_error'] = "";
   
+  $article_id = !empty($_POST['id']) ? $_POST['id'] : $_SESSION['article_id'];
+  $article_user_id = !empty($_POST['user_id']) ? $_POST['user_id'] : $_SESSION['article_user_id'];
+  $user_connection_id = $_SESSION['id'];
+  $_SESSION['article_id'] = $article_id;
+  $_SESSION['article_user_id'] = $article_user_id;
 
-  $article_query = "SELECT * FROM articles WHERE `id` = '$article_id'";
-  $article_result = mysqli_query($conn, $article_query);
-
-  $commentaire_query = "SELECT * FROM commentaire WHERE `article_id` = '$article_id' ORDER BY likes DESC";
-  $commentaire_result = mysqli_query($conn, $commentaire_query);
+  $article_result = mysqli_query($conn, "SELECT * FROM articles WHERE `id` = '$article_id'");
+  $commentaire_result = mysqli_query($conn, "SELECT * FROM commentaire WHERE `article_id` = '$article_id' ORDER BY likes DESC");
 
   // Affiche les commentaires
-  function show_commentaire($deepth, $date, $text, $pseudo, $id){
-    global $article_id;
+  function show_commentaire($deepth, $date, $text, $pseudo, $id, $user_id){
+    global $article_id, $user_connection_id, $article_user_id;
       $d = $deepth * 10;
       if ($d > 50){
         $d = 50;
@@ -37,6 +39,13 @@
         echo "<input type='hidden' name='com_id' value='$id'>";
         echo "<input type='hidden' name='id' value='$article_id'>";
         echo "</form>";
+        if ($user_connection_id == $user_id or $user_connection_id == $article_user_id){
+          echo "<form class='form_del_com' action='delete_com.php' method='post'>";
+          echo "<input type='submit' class='del_com' value='Supprimer'>";
+          echo "<input type='hidden' name='com_id' value='$id'>";
+          echo "</form>";
+        }
+        
       echo "</div>";
   }
 
@@ -44,10 +53,9 @@
   $set = [];
   function print_commentaire($c_array, $p_id){
       global $set;
-
       for ($i = 0; $i < count($c_array); $i++){
         if ($c_array[$i]['parent_id'] == $p_id and !in_array($c_array[$i]['id'], $set)){
-          show_commentaire($c_array[$i]['deepth'], $c_array[$i]['date'], $c_array[$i]['text'], $c_array[$i]['pseudo'], $c_array[$i]['id']);
+          show_commentaire($c_array[$i]['deepth'], $c_array[$i]['date'], $c_array[$i]['text'], $c_array[$i]['pseudo'], $c_array[$i]['id'], $c_array[$i]['user_id']);
           array_push($set, $c_array[$i]['id']);
           for ($j = 0; $j < count($c_array); $j++){
             if($j != $i and $c_array[$j]['parent_id'] == $c_array[$i]['id']){
@@ -79,8 +87,6 @@
       <a id="deco" href="deconnexion.php">Déconnexion</a>
     </div>
 
-    
-
     <div id="container_article">
   		<div class='article'>
   		  <?php
@@ -104,7 +110,7 @@
         <?php 
           $value = !empty($_POST['com_id']) ? "@".$_POST['com_id']."" : "";
          ?>
-        <input type="text" class="add_commentaire_text" name="text" placeholder="Ajouter" value="<?php echo $value?>">
+        <input type="text" class="add_commentaire_text" name="text" placeholder="<?php echo $error?>" value="<?php echo $value?>">
         <input type='hidden' name='article_id' value=<?php echo "$article_id"?>>
         <input type="submit" class="add_commentaire_submit" value="Ajouter un commentaire">
       </form>
@@ -116,12 +122,10 @@
           }
         }
         if (count($a) != 0){
-          print_commentaire($a, 0, []);
+          print_commentaire($a, 0);
         }
       ?>
     </div>
-
-
 
 </body>
 </html>

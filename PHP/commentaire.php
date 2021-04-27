@@ -37,15 +37,21 @@
     }
     $parent_id = $number;
 
-    $query = "SELECT deepth FROM commentaire WHERE id = '$parent_id'";
-    $result = mysqli_query($conn, $query);
+    $com_exist_result = mysqli_query($conn, "SELECT id FROM commentaire WHERE id = '$parent_id'");
+    $com_add_result = mysqli_query($conn, "SELECT deepth FROM commentaire WHERE id = '$parent_id'");
 
-    if ($result){
-      $etu = mysqli_fetch_array($result);
-      $deepth = $etu['deepth'] + 1;
+    if($com_exist_result){
+      if (mysqli_num_rows($com_exist_result) >= 1){
+        if ($com_add_result){
+          $etu = mysqli_fetch_array($com_add_result);
+          $deepth = $etu['deepth'] + 1;
+        }
+        $commentaire_text = substr($commentaire_text, $i);
+      } else {
+        $error = "Id incohérent";
+      }
     }
-
-    $commentaire_text = substr($commentaire_text, $i);
+    
   }
 
   if ($error == ""){
