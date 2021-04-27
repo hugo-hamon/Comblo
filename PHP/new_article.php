@@ -9,7 +9,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Nouvelle article</title>
+	<title>Nouvel article</title>
 	<link rel="stylesheet" href="../CSS/new_article.css" />
 </head>
 <body>
@@ -34,7 +34,7 @@
 
 			<datalist id="categorie">
 			  <option value="Politique">
-			  <option value="Jeux vidéo">
+			  <option value="Jeux vidéos">
 			  <option value="Nature">
 			  <option value="Automobile">
 			  <option value="Electronique">

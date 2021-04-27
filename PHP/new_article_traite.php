@@ -13,7 +13,7 @@
   $article_category = !empty($_POST['categorie']) ? $_POST['categorie'] : NULL;
   $article_text = !empty($_POST['text']) ? $_POST['text'] : NULL;
   $errors = ["", ""];
-  $category = ['Politique', 'Jeux vidéo', 'Nature', 'Automobile', 'Electronique'];
+  $category = ['Politique', 'Jeux vidéos', 'Nature', 'Automobile', 'Electronique'];
 
   if ($article_category == NULL or $article_text == NULL or $article_title == NULL){
   	$errors[0] = "Veuillez remplir tous les champs";

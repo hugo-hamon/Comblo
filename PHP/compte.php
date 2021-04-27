@@ -56,9 +56,9 @@
     <div id="paramètres">
       <h1>Bonjour ! <!-- nom de la personne --> </h1> 
         <p>Vous vous êtes inscrit sur cette addresse : </p>
-        <p>Si vous voulez changer d'addresse, cliquez ici : </p>
         <form action='compte_traite.php' method="post">
           <p>Mail: <?php echo $mail?></p>
+          <p>Si vous voulez changer d'adresse, cliquez ici : </p>
           <input type="text" name="mail" placeholder="Email">
           <input type="submit" name="login" value="Changer">
           <hr>

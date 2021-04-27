@@ -31,11 +31,10 @@
       <p></p>
       <h1>Bonjour <?php  ?> ! <!-- nom de la personne --> </h1> 
         <hr>
-        <h3>Nous vous remercions sincérement d'être inscrit sur notre Blog ! 
-        Comblo a pour but d'être utile a tous sur des sujets interressant et passionnant.
-        Tout vos  avis compte et chaque commentaire quelqu'il soit doivent être respecter.
-        Nous vous prions donc d'être agréable avec les autres utilisateurs.
-        Bonnes conversations sur Comblo &copy;
+        <h3>Nous vous remercions sincèrement d'être inscrit sur notre Blog !
+	    Comblo a pour but d'être utile a tous sur des sujets intéressants 
+	    et passionnants. Tous vos avis comptent et chaque commentaire quel-qu’il soit doit être respecté. 
+	    Nous vous prions donc d'être agréable avec les autres utilisateurs. Bonnes conversations sur Comblo &copy;
          </h3>
         <hr>
         <p><a href="infos.php">Informations</a></p>

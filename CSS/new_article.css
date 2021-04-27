@@ -37,6 +37,7 @@ body {
 }
 
 img{
+	background-size: cover;
 	position: absolute;
 	width: auto;
 	height: auto;
