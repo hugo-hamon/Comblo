@@ -1,3 +1,9 @@
+html {
+  background-image: url("../IMG/sunset.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -34,16 +40,6 @@ body {
   transform: translate(115%, 10%);
   height: 700px;
   width: 30%;
-}
-
-img{
-	background-size: cover;
-	position: absolute;
-	width: auto;
-	height: auto;
-	z-index: -1;
-	right: 0;
-	bottom: 0;
 }
 
 .container{

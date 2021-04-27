@@ -42,6 +42,5 @@
 		</div>
 
 	</form>
-	<img src="../IMG/sunset.png">
 </body>
 </html>

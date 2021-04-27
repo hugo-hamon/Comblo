@@ -37,8 +37,8 @@
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
       <form class="left_search" action="" method="post">
-        <input class="rod_search" type="search" name="search" placeholder="Search" aria-label="Search">
-        <button class="button_search" type="submit">Search</button>
+        <input class="rod_search" type="search" name="search" placeholder="Rechercher" aria-label="Search">
+        <button class="button_search" type="submit">Trouver</button>
       </form> 
     </div>
 
@@ -46,6 +46,9 @@
       <?php
         $search = !empty($_POST['search']) ? $_POST['search'] : NULL;
     		if ($result){
+          if (mysqli_num_rows($result) < 1){
+            echo "<h2 class='empty_article'>Pas encore d'article créez en un <a href='new_article.php'>ici</a></h2>";
+          }
   				while ($etu = mysqli_fetch_array($result)){
             $title = htmlspecialchars($etu['title'], ENT_QUOTES);
             if ($search != NULL){

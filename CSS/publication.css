@@ -4,6 +4,8 @@ html {
   background-repeat: no-repeat;
   font-family: Arial, Helvetica, sans-serif;
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 /* Fin Image de fond */
 
@@ -86,6 +88,11 @@ body {
   border: none;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.titre_article:hover{
+    color: red;
 }
 
 .text_article{
@@ -114,4 +121,8 @@ body {
   padding-right: 5px;
   color: black;
   font-weight: normal;
+}
+
+.empty_article{
+  text-align: center;
 }

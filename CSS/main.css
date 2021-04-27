@@ -4,6 +4,7 @@ html {
   background-image: url("../IMG/Background_main.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 /* Fin Image de fond */
 

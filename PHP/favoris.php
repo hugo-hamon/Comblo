@@ -76,8 +76,8 @@
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
       <form class="left_search" action="" method="post">
-        <input class="rod_search" type="search" name="search" placeholder="Search" aria-label="Search">
-        <button class="button_search" type="submit">Search</button>
+        <input class="rod_search" type="search" name="search" placeholder="Rechercher" aria-label="Search">
+        <button class="button_search" type="submit">Trouver</button>
       </form> 
     </div>
 
