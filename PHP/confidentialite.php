@@ -38,6 +38,7 @@
         <p>Avez-vous des remarques, sugestions afin d'amélioré notre site ? </p>
         <textarea name="rem" cols="40" rows="8  "></textarea> 
         <input class="favorite styled" value="Valider" type="button">
+
         <hr>
         <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150"/>
       </div>

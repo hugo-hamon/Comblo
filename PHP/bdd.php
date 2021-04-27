@@ -2,5 +2,5 @@
   $serveur = "localhost";
   $login = "root";
   $mdp = "";
-  $bdd_name = 'comblo';
+  $bdd_name = 'test';
 ?>
