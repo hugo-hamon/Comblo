@@ -165,10 +165,13 @@ body {
   float: right;
 }
 
-.rep_com{
+.form_rep_com{
+  display: inline;
+}
+
+.rep_com, .del_com{
   font-family: Calibri, Helvetica, sans-serif;
   font-size: 0.9em;
-  color:#fff;
   background-color: rgba(255, 255, 255, 0);
   outline: none;
   border: 0;
@@ -176,4 +179,10 @@ body {
   color: #CB4444 ;
   text-transform:uppercase;
   cursor:pointer;
+}
+
+.form_del_com{
+  display: inline-block;
+  float: right;
+  padding-right: 5px;
 }

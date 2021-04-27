@@ -134,14 +134,12 @@ a:link {
 }
 
 .footer_bottom {
-  background: black;
-  width: 100vw;
+  width: 100%;
   padding: 20px 0;
   text-align: center;
   color: white;
-  position: absolute;
-  top: 100%;
-  
+  position: fixed;
+  bottom: 0;
 }
 
 .footer_bottom p  {
