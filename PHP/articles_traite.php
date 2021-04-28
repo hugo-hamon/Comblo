@@ -15,12 +15,13 @@
   $error = !empty($_SESSION['add_com_error']) ? $_SESSION['add_com_error'] : "Ajouter";
   $_SESSION['add_com_error'] = "";
   
+  
   $article_id = !empty($_POST['id']) ? $_POST['id'] : $_SESSION['article_id'];
   $article_user_id = !empty($_POST['user_id']) ? $_POST['user_id'] : $_SESSION['article_user_id'];
   $user_connection_id = $_SESSION['id'];
   $_SESSION['article_id'] = $article_id;
   $_SESSION['article_user_id'] = $article_user_id;
-  
+
 
   $article_result = mysqli_query($conn, "SELECT * FROM articles WHERE `id` = '$article_id'");
   $commentaire_result = mysqli_query($conn, "SELECT * FROM commentaire WHERE `article_id` = '$article_id' ORDER BY likes DESC");
@@ -28,7 +29,7 @@
   // Affiche les commentaires
   function show_commentaire($deepth, $date, $text, $pseudo, $id, $user_id){
     global $article_id, $user_connection_id, $article_user_id;
-      $d = $deepth * 10;
+      $d = $deepth * 20;
       if ($d > 50){
         $d = 50;
       }

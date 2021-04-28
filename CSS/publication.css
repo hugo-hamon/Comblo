@@ -75,6 +75,7 @@ body {
 
 .pseudo_article{
   text-align: left;
+  display: inline-block;
 }
 
 .titre_article{
@@ -115,4 +116,24 @@ body {
   padding-right: 5px;
   color: black;
   font-weight: normal;
+}
+
+.button_delete{
+  padding: 10px 10px 0px 0px;
+  float: right;
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  width: 7%;
+}
+
+.delete{
+  width: 50%;
+}
+
+.del_art{
+  display: inline;
 }

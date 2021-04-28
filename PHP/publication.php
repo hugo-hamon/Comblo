@@ -17,6 +17,24 @@
   $query = "SELECT * FROM articles WHERE `user_id` = $id ORDER BY id DESC";
   $result = mysqli_query($conn, $query);
 
+  function print_article($pseudo, $id, $title, $text, $category, $date){
+    echo "<div class='article'>";
+    echo "<p class='pseudo_article'>$pseudo</p>";
+    echo "<form class='del_art' action='delete_art.php' method='post'>";
+    echo "<button type='submit' class='button_delete'>";
+    echo "<img class='delete' alt='delete' src='../IMG/delete.png'>";
+    echo "</button>";
+    echo "<input type='hidden' name='id' value='$id'>";
+    echo "</form>";
+    echo "<form action='articles_traite.php' method='post'>";
+    echo "<input class='titre_article' type='submit' value='$title'>";
+    echo "<input type='hidden' name='id' value='$id'>";
+    echo "</form>";
+    echo "<p class='text_article'>$text</p>";
+    echo "<p class='categorie_article'>$category<span class='date_article'>$date</span> </p>";
+    echo "</div>";
+  }
+
   mysqli_close($conn);
 ?>
 
@@ -37,8 +55,8 @@
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
       <form class="left_search" action="" method="post">
-        <input class="rod_search" type="search" name="search" placeholder="Search" aria-label="Search">
-        <button class="button_search" type="submit">Search</button>
+        <input class="rod_search" type="search" name="search" placeholder="Rechercher" aria-label="Search">
+        <button class="button_search" type="submit">Trouver</button>
       </form> 
     </div>
 
@@ -46,30 +64,17 @@
       <?php
         $search = !empty($_POST['search']) ? $_POST['search'] : NULL;
     		if ($result){
+    		    if (mysqli_num_rows($result) < 1){
+                    echo "<h2 class='empty_article'>Pas encore d'article créez en un <a href='new_article.php'>ici</a></h2>";
+                }
   				while ($etu = mysqli_fetch_array($result)){
             $title = htmlspecialchars($etu['title'], ENT_QUOTES);
             if ($search != NULL){
               if(strpos(strtolower($title), strtolower($search)) !== false or strpos(strtolower($etu['pseudo']), strtolower($search)) !== false or strpos(strtolower($etu['category']), strtolower($search)) !== false ){
-                  echo "<div class='article'>";
-                  echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
-                  echo "<form action='articles_traite.php' method='post'>";
-                  echo "<input class='titre_article' type='submit' value='$title'>";
-                  echo "<input type='hidden' name='id' value='".$etu['id']."'>";
-                  echo "</form>";
-                  echo "<p class='text_article'>".$etu['text']."</p>";
-                  echo "<p class='categorie_article'>".$etu['category']." <span class='date_article'>".$etu['date_article']."</span> </p>";
-                  echo "</div>";
+                  print_article($etu['pseudo'], $etu['id'], $title, $etu['text'], $etu['category'], $etu['date_article']);
               }
             } else {
-              echo "<div class='article'>";
-                  echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
-                  echo "<form action='articles_traite.php' method='post'>";
-                  echo "<input class='titre_article' type='submit' value='$title'>";
-                  echo "<input type='hidden' name='id'value='".$etu['id']."'>";
-                  echo "</form>";
-                  echo "<p class='text_article'>".$etu['text']."</p>";
-                  echo "<p class='categorie_article'>".$etu['category']." <span class='date_article'>".$etu['date_article']."</span> </p>";
-                  echo "</div>";
+              print_article($etu['pseudo'], $etu['id'], $title, $etu['text'], $etu['category'], $etu['date_article']);
             }
   				}
   			}

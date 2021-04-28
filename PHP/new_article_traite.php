@@ -13,7 +13,14 @@
   $article_category = !empty($_POST['categorie']) ? $_POST['categorie'] : NULL;
   $article_text = !empty($_POST['text']) ? $_POST['text'] : NULL;
   $errors = ["", ""];
-  $category = ['Politique', 'Jeux vidéos', 'Nature', 'Automobile', 'Electronique'];
+  $category = ['Politique', 'Jeux vidéos', 'Nature', 'Automobile',
+               'Electronique', 'Transport', 'Technologie', 'Relations',
+               'Médecine', 'Travail', 'Bricolage', 'Cuisine', 'Couture',
+               'Décoration', 'Etude', 'Jardinage', 'Marques', 'Militaire',
+               'Sport', 'Science', 'Religion', 'Civilisation', 'Astronomie',
+               'Mécanique', 'Histoire', 'Droit', 'Economie', 'Géographie',
+               'Psychologie', 'Architecture', 'Musique', 'Ecriture', 'Humour',
+               'Théatre'];
 
   if ($article_category == NULL or $article_text == NULL or $article_title == NULL){
   	$errors[0] = "Veuillez remplir tous les champs";
