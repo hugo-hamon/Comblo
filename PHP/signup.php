@@ -28,6 +28,6 @@
 			</form>
 		</div>
 	</div>
-	<img src="../IMG/sunset.png">
+	
 </body>
 </html>

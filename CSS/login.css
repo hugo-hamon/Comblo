@@ -1,15 +1,10 @@
 body{
-	font-family: Arial, sans-serif;
-}
-
-img{
+	background-image: url("../IMG/sunset.png");
+	background-repeat: no-repeat;
 	background-size: cover;
-	position: absolute;
-	width: auto;
-	height: auto;
-	z-index: -1;
-	right: 0;
-	bottom: 0;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{

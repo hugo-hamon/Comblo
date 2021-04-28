@@ -2,9 +2,10 @@
 html {
   background-image: url("../IMG/Background_main.jpg");
   background-repeat: no-repeat;
-  background-size:cover;
-  font-family: Arial, Helvetica, sans-serif;
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* Fin Image de fond */
 

@@ -33,10 +33,11 @@ body {
 
 body {
   background-image: url(../IMG/Blanc.jpg);
-  background-attachment: fixed;
-  background-size:cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* Fin image background CSS */
 
