@@ -36,7 +36,7 @@
       <a href="new_article.php">Nouvelles créations</a>
       <a href="favoris.php">Favoris</a>
       <a id="deco" href="deconnexion.php">Déconnexion</a>
-      <form class="left_search" action="" method="post">
+      <form class="left_search" action=""  method="post">
         <input class="rod_search" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="button_search" type="submit">Search</button>
       </form> 
@@ -65,7 +65,7 @@
                   echo "<p class='pseudo_article'>".$etu['pseudo']."</p>";
                   echo "<form action='articles_traite.php' method='post'>";
                   echo "<input class='titre_article' type='submit' value='$title'>";
-                  echo "<input type='hidden' name='id'value='".$etu['id']."'>";
+                  echo "<input type='hidden' name='id' value='".$etu['id']."'>";
                   echo "</form>";
                   echo "<p class='text_article'>".$etu['text']."</p>";
                   echo "<p class='categorie_article'>".$etu['category']." <span class='date_article'>".$etu['date_article']."</span> </p>";

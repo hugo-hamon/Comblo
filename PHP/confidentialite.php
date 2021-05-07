@@ -35,7 +35,7 @@
          </h3>
         <hr>
         <p>Avez-vous des remarques, suggestions afin d'améliorer notre site ? </p>
-        <textarea name="rem" cols="40" rows="8  "></textarea> 
+        <textarea name="rem" cols="40"></textarea> 
         <input class="favorite styled" value="Valider" type="button">
 
         <hr>

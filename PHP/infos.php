@@ -29,7 +29,7 @@
     
     <div id="paramètres">
       <p></p>
-      <h1>Bonjour <?php  ?> ! <!-- nom de la personne --> </h1> 
+      <h1>Bonjour  ! <!-- nom de la personne --> </h1> 
         <hr>
         <h3>Nous vous remercions sincèrement d'être inscrit sur notre Blog !
 	    Comblo a pour but d'être utile a tous sur des sujets intéressants 

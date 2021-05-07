@@ -62,7 +62,7 @@
   mysqli_close($conn);
 ?>
 
-<!DOCTYPE>
+<!DOCTYPE html>
   <html lang="fr">
   <head>
     <title>Comblo</title>
