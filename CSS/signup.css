@@ -1,5 +1,9 @@
 body{
+	background-image: url("../IMG/sunset.png");
 	font-family: Arial, sans-serif;
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 img{

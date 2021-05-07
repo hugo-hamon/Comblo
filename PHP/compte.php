@@ -58,7 +58,7 @@
         <p>Vous vous êtes inscrit sur cette addresse : </p>
         <form action='compte_traite.php' method="post">
           <p>Mail: <?php echo $mail?></p>
-          <p>Si vous voulez changer d'adresse, cliquez ici : </p>
+          <p>Si vous voulez changer d'adresse: </p>
           <input type="text" name="mail" placeholder="Email">
           <input type="submit" name="login" value="Changer">
           <hr>

@@ -30,14 +30,12 @@
     <div id="paramètres">
       <p></p>
         <hr>
-        <h3>Comme dans tout Blog, il peut y avoir des comportements déplacés et des injures.
-	    Nous nous désolidarisons totalement de tout propos tenu. Veuillez nous signaler toute conduite abusive : <input class="favorite styled" value="ici" type="button">
+        <h3>Comme dans tout Blog, il peut y avoir des comportements déplacés et des injures. Nous nous désolidarisons totalement de tout propos tenu. Veuillez nous signaler toute conduite abusive : <input class="favorite styled" value="ici" type="button">
          </h3>
         <hr>
         <p>Avez-vous des remarques, suggestions afin d'améliorer notre site ? </p>
         <textarea name="rem" cols="40"></textarea> 
         <input class="favorite styled" value="Valider" type="button">
-
         <hr>
         <img id="img_copy1" src="../IMG/logo_comblo_2.png" alt="Logo_Comblo" width="150"/>
       </div>

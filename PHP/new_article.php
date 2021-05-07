@@ -37,7 +37,36 @@
 			  <option value="Jeux vidéos">
 			  <option value="Nature">
 			  <option value="Automobile">
-			  <option value="Electronique">
+			  <option value="Eléctronique">
+			  <option value="Transport">
+			  <option value="Technologie">
+			  <option value="Relations">
+			  <option value="Médecine">
+			  <option value="Travail">
+			  <option value="Bricolage">
+			  <option value="Cuisine">
+			  <option value="Couture">
+			  <option value="Décoration">
+			  <option value="Etude">
+			  <option value="Jardinage">
+			  <option value="Marques">
+			  <option value="Militaire">
+			  <option value="Sport">
+			  <option value="Science">
+			  <option value="Religion">
+			  <option value="Civilisation">
+			  <option value="Astronomie">
+			  <option value="Mécanique">
+			  <option value="Histoire">
+			  <option value="Droit">
+			  <option value="Economie">
+			  <option value="Géographie">
+			  <option value="Psychologie">
+			  <option value="Architecture">
+			  <option value="Musique">
+			  <option value="Ecriture">
+			  <option value="Humour">
+			  <option value="Théâtre">
 			</datalist>
 		</div>
 
