@@ -11,17 +11,19 @@
     die('Erreur: '.mysqli_connect_error());
   }
 
+  // Récuperation des données provenant de compte.php
   $id = $_SESSION['id'];
   $mail = !empty($_POST['mail']) ? $_POST['mail'] : NULL;
   $old_mdp = !empty($_POST['old_mdp']) ? $_POST['old_mdp'] : NULL;
   $new_mdp = !empty($_POST['new_mdp']) ? $_POST['new_mdp'] : NULL;
 
+  // Test si mail est nul si non NULL remplace l'ancien mail par le nouveau dans la base de donnée 
   if ($mail != NULL){
     if (filter_var($mail, FILTER_VALIDATE_EMAIL)){
       mysqli_query($conn, "UPDATE utilisateur SET `email` = '$mail' WHERE `id` = $id");
     } 
   }
-
+  // Test si les mots de passes rentrés sont cohérent avec ce qu'il y a dans la base de donnée si oui il remplace l'ancien par le nouveau
   if ($old_mdp != NULL and $new_mdp != NULL){
     $old_mdp_query = mysqli_query($conn, "SELECT pass FROM utilisateur WHERE id = $id");
     if ($old_mdp_query){

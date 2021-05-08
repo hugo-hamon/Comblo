@@ -4,7 +4,7 @@
     header('Location: login.php');
   }
 
-  // Return all information needed for the main page 
+  // Retourne toutes les information nécessaire pour l'affichage d'information sur la page principale
   function get_main_page_information($conn){
     $information = [];
 

@@ -32,6 +32,7 @@
 			<?php echo "<div class='errors'>$errors[0]</div>";?>
 			<input class="btn" type="submit" name="sumbit" value="Créer">
 
+			<!-- Categoris disponible pour la création d'un articles -->
 			<datalist id="categorie">
 			  <option value="Politique">
 			  <option value="Jeux vidéos">
@@ -69,8 +70,6 @@
 			  <option value="Théâtre">
 			</datalist>
 		</div>
-
 	</form>
-	<img alt="Sunset.png" src="../IMG/sunset.png">
 </body>
 </html>

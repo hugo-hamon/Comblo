@@ -13,6 +13,7 @@
     die('Erreur: '.mysqli_connect_error());
   }
 
+  // Récuperes les information necessaire à la page principale
   $informations = get_main_page_information($conn);
   
   $article_query = "SELECT * FROM articles ORDER BY `favoris` DESC LIMIT 3";
@@ -31,6 +32,7 @@
     }
   }
 
+  // Fonction qui affiche les articles
   function print_article($pseudo, $img_src, $id, $title, $text, $category, $date, $user_id){
     echo "<div class='article'>";
     echo "<p class='pseudo_article'>$pseudo</p>";
@@ -71,6 +73,7 @@
   </head>
 
   <body id="body" >
+    <!-- Nav Bar -->
     <div class="navbar">
       <a href="main.php"> <img id="img_copy1" src="../IMG/logo_comblo_2_new.png" alt="Logo_Comblo" width="20" /></a>
       <a href="infos.php">Infos</a>
@@ -81,6 +84,7 @@
       <a id="deco" href="deconnexion.php">Déconnexion</a>
     </div>
 
+    <!-- Affiches les trois meilleurs articles -->
     <div id="container_article">
       <h1>Articles du moment</h1>
       <?php
@@ -107,15 +111,17 @@
         }
       ?>
     </div>
-
+    
+    <!-- Affiches les informations du site -->
     <div class="left_side_bar">
-      <h2>Informations</h2>
-      <p><span class="red"><?php echo $informations[0];?></span> utilisateurs</p>
-      <p><span class="red"><?php echo $informations[1];?></span> articles</p>
-      <p><span class="red"><?php echo $informations[2];?></span> commentaires</p>
-      <p><span class="red"><?php echo $informations[4];?></span> favoris</p>
+      <h2 class="info-texte">Informations</h2>
+      <p class="info-texte"><span class="red"><?php echo $informations[0];?></span> utilisateurs</p>
+      <p class="info-texte"><span class="red"><?php echo $informations[1];?></span> articles</p>
+      <p class="info-texte"><span class="red"><?php echo $informations[2];?></span> commentaires</p>
+      <p class="info-texte"><span class="red"><?php echo $informations[4];?></span> favoris</p>
     </div>
   
+  <!-- Copyright -->
   <div class="footer_bottom" >
     <p>copyright &copy; 2021, designed by <span>Arka and Blupo</span></p>
   </div> 

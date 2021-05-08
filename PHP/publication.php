@@ -17,6 +17,7 @@
   $query = "SELECT * FROM articles WHERE `user_id` = $id ORDER BY id DESC";
   $result = mysqli_query($conn, $query);
 
+  // Affiche les différentes publication
   function print_article($pseudo, $id, $title, $text, $category, $date){
     echo "<div class='article'>";
     echo "<p class='pseudo_article'>$pseudo</p>";

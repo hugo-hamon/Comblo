@@ -12,6 +12,7 @@
     die('Erreur: '.mysqli_connect_error());
   }
 
+  // Suprime l'article de la base de donnée 
   $article_id = !empty($_POST['id']) ? $_POST['id'] : NULL;
   $fav_query = mysqli_query($conn, "DELETE FROM articles WHERE id = $article_id");
 

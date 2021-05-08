@@ -28,6 +28,7 @@
     }
   }
 
+  // Fonction pour afficher les articles mis en favoris
   function print_article($pseudo, $img_src, $id, $title, $text, $category, $date, $user_id){
     echo "<div class='article'>";
     echo "<p class='pseudo_article'>$pseudo</p>";
@@ -47,6 +48,7 @@
     echo "</div>";
   }
 
+  // Fonction pour afficher si un article est favoris ou non
   function is_fav($f_list, $id){
     for ($i = 0; $i < count($f_list); $i++){
       if ($f_list[$i]['article_id'] == $id){
@@ -67,6 +69,7 @@
     <link rel="stylesheet" href="../CSS/articles.css" />
 </head>
 <body>
+  <!-- Nav Bar -->
   <div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">Infos</a>
@@ -81,6 +84,7 @@
       </form> 
     </div>
 
+    <!-- Affiche les articles -->
     <div id="container_article">
       <?php
         $search = !empty($_POST['search']) ? $_POST['search'] : NULL;

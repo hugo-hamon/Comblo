@@ -15,13 +15,11 @@
   $article_id = !empty($_POST['id']) ? $_POST['id'] : NULL;
   $id = $_SESSION['id'];
   
-
   $fav_query = "SELECT * FROM favoris WHERE `article_id` = '$article_id' and `user_id` = '$id'";
   $fav_result = mysqli_query($conn, $fav_query);
 
-  
-
   if($fav_result){
+    // Test si l'article est en favoris si c'est le cas il l'enleve des favoris sinon il l'ajoute
     if (mysqli_num_rows($fav_result) >= 1){
       $fav_query = "DELETE FROM favoris WHERE article_id = $article_id and `user_id` = '$id'";
       $fav_result = mysqli_query($conn, $fav_query);

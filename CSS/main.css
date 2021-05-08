@@ -193,3 +193,7 @@ h1{
   color: black;
   font-weight: normal;
 }
+
+.info-texte{
+  overflow-wrap: break-word;
+}

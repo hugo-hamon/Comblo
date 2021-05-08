@@ -8,6 +8,7 @@
     die('Erreur: '.mysqli_connect_error());
   }
 
+  // Récuperation des données provenant de la page traite article
   $commentaire_text = !empty($_POST['text']) ? $_POST['text'] : NULL;
   $article_id = !empty($_POST['article_id']) ? $_POST['article_id'] : NULL;
   $id = $_SESSION['id'];
@@ -18,14 +19,17 @@
   $pseudo = $_SESSION['pseudo'];
   $is_com = FALSE;
 
+  // Test si le commentaire ou l'id de l'article est vide
   if ($commentaire_text == NULL or $article_id == NULL){
   	$error = "Champ vide";
   }
 
+  // Test si le commentaire répond à un autre avec un @ en premier caractére (exe: @41 D'accord)
   if (strpos($commentaire_text, "@" ) === 0){
     $is_com = TRUE;
   }
 
+  // En cas de réponse test si l'id à qui il répond est cohérent et calcul le décalage
   if ($is_com){
     //Get parent id
     $number = 0;
@@ -54,12 +58,14 @@
     
   }
 
+  // Si aucune erreur ajout du commentaire dans la base de donnée
   if ($error == ""){
   	$commentaire_text = mysqli_real_escape_string($conn, $commentaire_text);
   	$query = "INSERT INTO `commentaire` (`user_id`, `text`, `deepth`, `likes`, `date`, `parent_id`, `article_id`, `pseudo`) VALUES ('$id', '$commentaire_text', '$deepth', '$likes', CURDATE(), '$parent_id', '$article_id', '$pseudo')";
     mysqli_query($conn, $query);
   }
 
+  // Redirection vers l'article
   $_SESSION['add_com_error'] = $error;
   header('Location: articles_traite.php');
 

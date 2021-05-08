@@ -33,6 +33,7 @@
   </head>
   
   <body>
+    <!-- Nav Bar -->
     <div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">Infos</a>

@@ -9,6 +9,7 @@
   }
 
   $set = [];
+  // Fonction récursive pour supprimer un commentaire ainsi que les commentaires enfants
   function delete_com($c_array, $p_id, $conn){
     global $set;
 

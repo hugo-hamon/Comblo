@@ -12,21 +12,21 @@
     die('Erreur: '.mysqli_connect_error());
   }
 
+  // Récuperation des erreurs provenant de la page d'ajout de commentaire
   $error = !empty($_SESSION['add_com_error']) ? $_SESSION['add_com_error'] : "Ajouter";
   $_SESSION['add_com_error'] = "";
   
-  
+  // Récuperation des données provenant de la base de données 
   $article_id = !empty($_POST['id']) ? $_POST['id'] : $_SESSION['article_id'];
   $article_user_id = !empty($_POST['user_id']) ? $_POST['user_id'] : $_SESSION['article_user_id'];
   $user_connection_id = $_SESSION['id'];
   $_SESSION['article_id'] = $article_id;
   $_SESSION['article_user_id'] = $article_user_id;
 
-
   $article_result = mysqli_query($conn, "SELECT * FROM articles WHERE `id` = '$article_id'");
   $commentaire_result = mysqli_query($conn, "SELECT * FROM commentaire WHERE `article_id` = '$article_id' ORDER BY likes DESC");
 
-  // Affiche les commentaires
+  // Fonction pour afficher les commentaires
   function show_commentaire($deepth, $date, $text, $pseudo, $id, $user_id){
     global $article_id, $user_connection_id, $article_user_id;
       $d = $deepth * 20;
@@ -51,7 +51,7 @@
       echo "</div>";
   }
 
-  // Fonctions récursive qui affiche les commentaires dans l'ordre avec un décalage
+  // Fonctions récursive qui affiche les commentaires dans l'ordre avec un décalage maximum de 50 px
   $set = [];
   function print_commentaire($c_array, $p_id){
       global $set;
@@ -79,6 +79,7 @@
     <link rel="stylesheet" href="../CSS/articles_traite.css" />
 </head>
 <body>
+  <!-- Nav Bar -->
 	<div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">Infos</a>
@@ -89,6 +90,7 @@
       <a id="deco" href="deconnexion.php">Déconnexion</a>
     </div>
 
+    <!-- Affiche l'article -->
     <div id="container_article">
   		<div class='article'>
   		  <?php
@@ -106,7 +108,7 @@
       ?>
   		</div>
     </div>
-
+    <!-- Affiche les commentaires -->
     <div id="container_commentaire">
       <form action='commentaire.php' method='post'>
         <?php 

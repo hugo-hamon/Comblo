@@ -12,8 +12,7 @@
   	die('Erreur: '.mysqli_connect_error());
   }
 
-  $error = !empty($_SESSION['add_com_error']) ? $_SESSION['add_com_error'] : "";
-
+  // Récuperation des données provenant de la base de données 
   $query = "SELECT * FROM articles ORDER BY `id` DESC LIMIT 25";
   $result = mysqli_query($conn, $query);
 
@@ -29,6 +28,8 @@
       array_push($fav_list, $row);
     }
   }
+
+  // Fonction pour afficher les articles
   function print_article($pseudo, $img_src, $id, $title, $text, $category, $date, $user_id){
     echo "<div class='article'>";
     echo "<p class='pseudo_article'>$pseudo</p>";
@@ -48,6 +49,7 @@
     echo "</div>";
   }
 
+    // Fonction pour les favoris
   function is_fav($f_list, $id){
     for ($i = 0; $i < count($f_list); $i++){
       if ($f_list[$i]['article_id'] == $id){
@@ -60,14 +62,16 @@
   mysqli_close($conn);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8" />
 	<title>Articles</title>
-    <link rel="stylesheet" href="../CSS/articles.css" />
+  <link rel="stylesheet" href="../CSS/articles.css" />
 </head>
 <body>
+  <!-- Nav Bar -->
 	<div class="navbar">
       <a href="main.php">Comblo</a>
       <a href="infos.php">Infos</a>
@@ -82,6 +86,7 @@
       </form> 
     </div>
 
+    <!-- Affichage des articles -->
     <div id="container_article">
     	<?php
         $search = !empty($_POST['search']) ? $_POST['search'] : NULL;
